@@ -4,9 +4,9 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className="h-[100vh] w-[100vw] overflow-hidden">
+    <div className="h-[100vh] w-[100vw] overflow-x-hidden">
       <div className="h-full w-full flex flex-col lg:grid lg:grid-cols-10">
-        <div className="bg-[#131313] py-12 col-span-4 flex justify-center items-center">
+        <div className="bg-[#131313] py-12 px-2 col-span-4 flex justify-center items-center">
           <p className="text-2xl font-medium sm:text-3xl sm:font-semibold">
             <span className="text-3xl font-semibold sm:font-bold sm:text-4xl bg-gradient-to-tr from-[#2affec] to-green-700 bg-clip-text text-transparent">
               DevChallenge{" "}
@@ -16,10 +16,10 @@ const page = () => {
         </div>
 
         <div className="bg-[#191919] col-span-6 h-full">
-          <div className="sm:relative top-12 left-12 p-4">
+          <div className="sm:relative top-12 left-12 p-2">
           <Link href={"/"}>  
-            <button className="border border-gray-400 flex justify-center items-center py-1 px-2 gap-1 font-medium rounded">
-              <ArrowLeft className="h-5 w-5 font-light text-base" /> Home
+            <button className="border border-gray-400 hover:bg-[#222222] flex justify-center items-center py-1 px-2 gap-1 text-sm font-medium rounded transition-all duration-500">
+             <ArrowLeft className="h-5 w-5 font-light text-base" /> Home 
             </button>
           </Link>
           </div>

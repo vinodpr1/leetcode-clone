@@ -19,3 +19,95 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
+
+
+
+
+
+
+@keyframes lightning {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  20% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  30% {
+    opacity: 0.8;
+    transform: scaleX(0.95);
+  }
+  40% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.lightning-line {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  height: 2px;
+  width: 150px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 149, 255, 1) 0%,
+    rgba(0, 149, 255, 0.8) 50%,
+    rgba(0, 149, 255, 0.4) 100%
+  );
+  transform-origin: left center;
+  animation: lightning 3s infinite;
+  box-shadow: 
+    0 0 10px rgba(0, 149, 255, 0.8),
+    0 0 20px rgba(0, 149, 255, 0.4),
+    0 0 30px rgba(0, 149, 255, 0.2);
+}
+
+.glow-effect {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  height: 20px;
+  width: 150px;
+  background: radial-gradient(
+    circle at left,
+    rgba(0, 149, 255, 0.8),
+    transparent 70%
+  );
+  transform: translateY(-50%);
+  animation: glow 3s infinite;
+  pointer-events: none;
+}
+
+.code-block {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.code-block pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
