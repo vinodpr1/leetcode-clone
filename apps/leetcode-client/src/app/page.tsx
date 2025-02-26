@@ -2,7 +2,6 @@
 "use client";
 
 import { ArrowLeft } from "lucide-react";
-// importing necessary functions
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 
@@ -10,7 +9,7 @@ export default function Home() {
   // extracting data from usesession as session
   const { data: session } = useSession();
 
-  // rendering components for not logged in users
+  //not logged in users
   return (
     <div className="h-[100vh] w-[100vw] overflow-hidden">
       <div className="h-full w-full flex flex-col lg:grid lg:grid-cols-10">
@@ -82,11 +81,11 @@ export default function Home() {
 
               <div className="flex flex-col w-full items-center justify-center mt-4">
                 <div className="flex w-full items-center justify-center space-x-2">
-                  <div className="h-[1px] w-8 bg-gray-400"></div>
+                  <div className="h-[1px] w-16 bg-gray-400"></div>
                   <span className="text-xs text-gray-400 uppercase">
                     or log in with your email
                   </span>
-                  <div className="h-[1px] w-8 bg-gray-400"></div>
+                  <div className="h-[1px] w-16 bg-gray-400"></div>
                 </div>
 
                 <div className="flex flex-col gap-2 w-full">
@@ -119,7 +118,7 @@ export default function Home() {
                   </div>
 
                   <h3 className="flex gap-2 justify-center items-center">
-                    <span>New to Leetcode?</span>{" "}
+                    <span className="text-gray-400">New to Leetcode?</span>{" "}
                     <span className="text-blue-600">
                       {" "}
                       Sign up for an account
