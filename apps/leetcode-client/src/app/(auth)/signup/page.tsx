@@ -6,7 +6,7 @@ const page = () => {
   return (
     <div className="h-[100vh] w-[100vw] overflow-x-hidden">
       <div className="h-full w-full flex flex-col lg:grid lg:grid-cols-10">
-      <div className="bg-[#131313] flex flex-col py-12 px-2 col-span-4 justify-center">
+        <div className="bg-[#131313] flex flex-col py-12 px-2 col-span-4 justify-center">
           <div className="">
             <p className="text-2xl font-medium sm:text-3xl sm:font-semibold">
               <span className="text-3xl font-semibold sm:font-bold sm:text-4xl bg-gradient-to-tr from-[#2affec] to-green-700 bg-clip-text text-transparent">
@@ -22,7 +22,7 @@ const page = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="bg-[#191919] col-span-6 h-full">
           <div className="sm:relative top-12 left-12 p-2">
             <Link href={"/"}>
