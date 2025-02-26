@@ -91,7 +91,7 @@ const page = () => {
                   <div className="h-[1px] w-16 bg-gray-400"></div>
                 </div>
 
-                <div className="flex flex-col gap-2 w-full">
+                <div className="flex flex-col gap-2 w-full pb-6">
                   <div className="w-full flex flex-col gap-2">
                     <label htmlFor="email">
                       <span className="text-sm text-gray-400">Email</span>
