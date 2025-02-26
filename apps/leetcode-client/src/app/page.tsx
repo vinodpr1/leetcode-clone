@@ -62,20 +62,19 @@ export default function Home() {
 
                 <button className="flex items-center justify-center gap-2 bg-gray-200 hover:bg-gray-300 text-black px-8 py-2 rounded-md transition-colors">
                   <img
-                    src="https://www.microsoft.com/favicon.ico"
-                    alt=""
+                    src="https://www.apple.com/favicon.ico"
+                    alt="Apple Logo"
                     className="w-5 h-5"
                   />
-                  <span className="font-medium">Microsoft</span>
+                  <span className="font-medium">Apple</span>
                 </button>
-
                 <button className="flex items-center justify-center gap-2 bg-gray-200 hover:bg-gray-300 text-black px-8 py-2 rounded-md transition-colors">
                   <img
-                    src="https://hasura.io/favicon.ico"
-                    alt=""
+                    src="https://img.icons8.com/color/48/discord-logo.png"
+                    alt="Discord Logo"
                     className="w-5 h-5"
                   />
-                  <span className="font-medium">Hasura</span>
+                  <span className="font-medium">Discord</span>
                 </button>
               </div>
 
