@@ -34,7 +34,11 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-x-6">
           <div className="hidden md:flex items-center gap-x-6">
-            <Link target="blank" href="https://github.com/codervinod123" className="flex items-center gap-x-1 text-sm ">
+            <Link
+              target="blank"
+              href="https://github.com/codervinod123"
+              className="flex items-center gap-x-1 text-sm "
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -88,23 +92,27 @@ const Navbar = () => {
                 </ul>
                 <div className="flex gap-4 mt-4 items-center justify-between">
                   <div className="w-1/3">
-                  <Link href={"/signin"}>
-                    <button className="w-full flex justify-center items-center px-2 py-1 bg-[#212121] border border-gray-500 rounded-full text-white">
-                      Sign in
-                    </button>
+                    <Link href={"/signin"}>
+                      <button className="w-full flex justify-center items-center px-2 py-1 bg-[#212121] border border-gray-500 rounded-full text-white">
+                        Sign in
+                      </button>
                     </Link>
                   </div>
                   <div className="w-1/3">
-                  <Link href={"/signup"}>
-                    <button className="w-full flex justify-center items-center px-2 py-1 bg-[#00e599] border border-gray-500 rounded-full text-black">
-                      Sign up
-                    </button>
+                    <Link href={"/signup"}>
+                      <button className="w-full flex justify-center items-center px-2 py-1 bg-[#00e599] border border-gray-500 rounded-full text-black">
+                        Sign up
+                      </button>
                     </Link>
                   </div>
                 </div>
 
                 <div className="flex w-full justify-center gap-4 mt-4">
-                  <Link target="blank" href="https://github.com/codervinod123" className="flex items-center gap-x-1 text-sm ">
+                  <Link
+                    target="blank"
+                    href="https://github.com/codervinod123"
+                    className="flex items-center gap-x-1 text-sm "
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
