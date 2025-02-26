@@ -26,13 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <SessionWrapper>
-     <html lang="en">
-       <body
-         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-       >
-         {children}
-       </body>
-     </html>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          {children}
+        </body>
+      </html>
     </SessionWrapper>
   );
 }
