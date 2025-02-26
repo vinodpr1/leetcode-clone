@@ -1,12 +1,10 @@
 import express from "express";
+import { SignIn, SignUp } from "../../../controllers";
 
 const userRoutes:any = express.Router();
 
-userRoutes.get("/signin", (req:any, res:any)=>{
-    res.json({
-        mesage:"Hii i'm healthy",
-    })
-});
+userRoutes.post("/signin", SignIn);
+userRoutes.post("/signup", SignUp);
 
 export {userRoutes}
 
