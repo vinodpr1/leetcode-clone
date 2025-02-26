@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { prismaClient } from "@repo/db/prismaClient";
+import { NotFoundError, UnauthorizeError } from "../errorhandlers/client-error";
 
 class UserRepository {
   constructor() {}
@@ -27,12 +28,12 @@ class UserRepository {
       const user = await prismaClient.user.findUnique({
         where: { email: data.email },
       });
-      if (!user) {return "User is not find in database";
-        // throw new NotFoundError("User is not find in database");
+      if (!user) {
+        throw new NotFoundError("User is not find in database");
       }
       const isMatchpassword = bcrypt.compareSync(data.password, user.password);
-      if (!isMatchpassword) { return "Password does't matched";
-        // throw new UnauthorizeError("Password does't matched");
+      if (!isMatchpassword) {
+        throw new UnauthorizeError("Password does't matched");
       }
       const jwtToken = jwt.sign({ id: user?.id }, "vinodpr");
       return jwtToken;
