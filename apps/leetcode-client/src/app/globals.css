@@ -62,18 +62,17 @@ body {
     opacity: 0;
   }
 }
-
+/* from-[#2affec] to-green-700 */
 .lightning-line {
-  position: absolute;
   top: 50%;
   left: 100%;
   height: 2px;
-  width: 150px;
+  width: full;
   background: linear-gradient(
     90deg,
-    rgba(0, 149, 255, 1) 0%,
-    rgba(0, 149, 255, 0.8) 50%,
-    rgba(0, 149, 255, 0.4) 100%
+    #2affec 0%,
+    #358882 50%,
+    #095e57 100%
   );
   transform-origin: left center;
   animation: lightning 3s infinite;
@@ -84,14 +83,14 @@ body {
 }
 
 .glow-effect {
-  position: absolute;
+  border-radius: 2px;
   top: 50%;
   left: 100%;
   height: 20px;
   width: 150px;
   background: radial-gradient(
     circle at left,
-    rgba(0, 149, 255, 0.8),
+    #2affec,
     transparent 70%
   );
   transform: translateY(-50%);
@@ -100,7 +99,7 @@ body {
 }
 
 .code-block {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(227, 22, 22, 0.1);
   padding: 1.5rem;
   border-radius: 8px;
   width: 100%;

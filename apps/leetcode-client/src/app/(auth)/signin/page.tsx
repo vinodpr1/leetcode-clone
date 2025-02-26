@@ -1,27 +1,36 @@
-import { ArrowLeft } from 'lucide-react'
-import Link from 'next/link'
-import React from 'react'
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
+import React from "react";
+import "../../globals.css";
 
 const page = () => {
   return (
     <div className="h-[100vh] w-[100vw] overflow-x-hidden">
       <div className="h-full w-full flex flex-col lg:grid lg:grid-cols-10">
-        <div className="bg-[#131313] py-12 px-2 col-span-4 flex justify-center items-center">
-          <p className="text-2xl font-medium sm:text-3xl sm:font-semibold">
-            <span className="text-3xl font-semibold sm:font-bold sm:text-4xl bg-gradient-to-tr from-[#2affec] to-green-700 bg-clip-text text-transparent">
-              DevChallenge{" "}
-            </span>
-            Sharpen your <br /> coding skills with real challenges.
-          </p>
+        <div className="bg-[#131313] flex flex-col py-12 px-2 col-span-4 justify-center">
+          <div className="">
+            <p className="text-2xl font-medium sm:text-3xl sm:font-semibold">
+              <span className="text-3xl font-semibold sm:font-bold sm:text-4xl bg-gradient-to-tr from-[#2affec] to-green-700 bg-clip-text text-transparent">
+                DevChallenge{" "}
+              </span>
+              Sharpen your <br /> coding skills with real challenges.
+            </p>
+          </div>
+          <div className="flex items-center pt-8 max-w-full">
+            <div className="">
+              <div className="lightning-line"></div>
+              <div className="glow-effect"></div>
+            </div>
+          </div>
         </div>
 
         <div className="bg-[#191919] col-span-6 h-full">
           <div className="sm:relative top-12 left-12 p-2">
-          <Link href={"/"}>  
-            <button className="border border-gray-400 hover:bg-[#222222] flex justify-center items-center py-1 px-2 gap-1 text-sm font-medium rounded transition-all duration-500">
-             <ArrowLeft className="h-5 w-5 font-light text-base" /> Home 
-            </button>
-          </Link>
+            <Link href={"/"}>
+              <button className="border border-gray-400 hover:bg-[#222222] flex justify-center items-center py-1 px-2 gap-1 text-sm font-medium rounded transition-all duration-500">
+                <ArrowLeft className="h-5 w-5 font-light text-base" /> Home
+              </button>
+            </Link>
           </div>
 
           <div className="flex flex-col items-center">
@@ -114,10 +123,10 @@ const page = () => {
                   <h3 className="flex gap-2 justify-center items-center">
                     <span className="text-gray-400">New to Leetcode?</span>{" "}
                     <Link href={"/signup"}>
-                    <span className="text-blue-600">
-                      {" "}
-                      Sign up for an account
-                    </span>
+                      <span className="text-blue-600">
+                        {" "}
+                        Sign up for an account
+                      </span>
                     </Link>
                   </h3>
                 </div>
@@ -127,7 +136,7 @@ const page = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
