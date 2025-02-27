@@ -32,6 +32,7 @@ const CodeEditor = ({theme, language, code }: { theme: any; language: any, code:
     <Editor
       height="90vh"
       defaultLanguage={language.value}
+      language={language.value}
       defaultValue="// some comment"
       value={code}
       onChange={handleEditorChange}
