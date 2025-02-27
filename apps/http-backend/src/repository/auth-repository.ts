@@ -9,7 +9,7 @@ class UserRepository {
   async SignUp(data: any) {
     try {
       const hashedPassword = bcrypt.hashSync(data.password, 10);
-      console.log("PPP", data.password)
+      console.log("PPP", data.password);
       const user = await prismaClient.user.create({
         data: { name: data.name, email: data.email, password: hashedPassword },
       });
@@ -42,7 +42,6 @@ class UserRepository {
       throw error;
     }
   }
-
 }
 
 export { UserRepository };

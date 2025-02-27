@@ -22,7 +22,6 @@ class UserServices {
       throw error;
     }
   }
-
 }
 
 export { UserServices };

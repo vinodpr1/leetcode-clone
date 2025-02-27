@@ -14,7 +14,9 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <div className="mt-12 bg-black"></div>
+      <div className="mt-12 bg-black">
+        <Link href={`/problems/${Math.random()}`}>Join Room</Link>
+      </div>
     </div>
   );
 }
