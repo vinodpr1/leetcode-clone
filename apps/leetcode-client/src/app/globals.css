@@ -20,6 +20,19 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.lang::-webkit-scrollbar{
+  width: 5px;
+}
+.lang::-webkit-scrollbar-track{
+  background: #615f5f; /* Dark track */
+}
+
+
+.lang::-webkit-scrollbar-thumb{
+  background: #a1a0a0; /* Gray thumb */
+  border-radius: 10px;
+}
+
 
 
 

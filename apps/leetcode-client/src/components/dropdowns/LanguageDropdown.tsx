@@ -15,8 +15,8 @@ const LanguageDropdown = ({
   };
 
   return (
-    <div
-      className={`absolute z-50 top-[30px] w-[200px] h-auto max-h-[400px] overflow-auto left-0 bg-global_bg rounded transition-all duration-300 ease-in-out`}
+    <div 
+      className={`lang absolute z-50 top-[30px] w-[200px] h-auto max-h-[400px] overflow-auto left-0 bg-global_bg rounded transition-all duration-300 ease-in-out`}
     >
       <div className="w-full h-full">
         <ul className="p-4 gap-4 text-sm font-light">

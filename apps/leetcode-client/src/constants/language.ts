@@ -8,6 +8,66 @@ export const LANGUAGES = [
     value: "javascript",
   },
   {
+    id: 74,
+    name: "TypeScript",
+    label: "TypeScript",
+    value: "typescript",
+  },
+  {
+    id: 50,
+    name: "C",
+    label: "C",
+    value: "c",
+  },
+  {
+    id: 54,
+    name: "C++",
+    label: "C++",
+    value: "cpp",
+  },
+  {
+    id: 62,
+    name: "Java",
+    label: "Java",
+    value: "java",
+  },
+  {
+    id: 70,
+    name: "Python 2",
+    label: "Python",
+    value: "python",
+  },
+  {
+    id: 71,
+    name: "Python 3",
+    label: "Python",
+    value: "python",
+  },
+  {
+    id: 68,
+    name: "PHP",
+    label: "PHP",
+    value: "php",
+  },
+  {
+    id: 73,
+    name: "Rust",
+    label: "Rust",
+    value: "rust",
+  },
+  {
+    id: 78,
+    name: "Kotlin",
+    label: "Kotlin",
+    value: "kotlin",
+  },
+  {
+    id: 60,
+    name: "Go",
+    label: "Go",
+    value: "go",
+  },
+  {
     id: 45,
     name: "Assembly",
     label: "Assembly",
@@ -25,18 +85,7 @@ export const LANGUAGES = [
     label: "Basic",
     value: "basic",
   },
-  {
-    id: 50,
-    name: "C",
-    label: "C",
-    value: "c",
-  },
-  {
-    id: 54,
-    name: "C++",
-    label: "C++",
-    value: "cpp",
-  },
+  
   // {
   //   id: 86,
   //   name: "Clojure",
@@ -92,12 +141,6 @@ export const LANGUAGES = [
     value: "fortran",
   },
   {
-    id: 60,
-    name: "Go",
-    label: "Go",
-    value: "go",
-  },
-  {
     id: 88,
     name: "Groovy",
     label: "Groovy",
@@ -108,19 +151,6 @@ export const LANGUAGES = [
     name: "Haskell",
     label: "Haskell",
     value: "haskell",
-  },
-  {
-    id: 62,
-    name: "Java",
-    label: "Java",
-    value: "java",
-  },
-
-  {
-    id: 78,
-    name: "Kotlin",
-    label: "Kotlin",
-    value: "kotlin",
   },
   {
     id: 64,
@@ -159,29 +189,12 @@ export const LANGUAGES = [
     label: "Perl",
     value: "perl",
   },
-  {
-    id: 68,
-    name: "PHP",
-    label: "PHP",
-    value: "php",
-  },
+  
   {
     id: 69,
     name: "Prolog",
     label: "Prolog",
     value: "prolog",
-  },
-  {
-    id: 70,
-    name: "Python 2",
-    label: "Python",
-    value: "python",
-  },
-  {
-    id: 71,
-    name: "Python 3",
-    label: "Python",
-    value: "python",
   },
   {
     id: 80,
@@ -195,12 +208,7 @@ export const LANGUAGES = [
     label: "Ruby",
     value: "ruby",
   },
-  {
-    id: 73,
-    name: "Rust",
-    label: "Rust",
-    value: "rust",
-  },
+
   {
     id: 81,
     name: "Scala",
@@ -218,12 +226,6 @@ export const LANGUAGES = [
     name: "Swift",
     label: "Swift",
     value: "swift",
-  },
-  {
-    id: 74,
-    name: "TypeScript",
-    label: "TypeScript",
-    value: "typescript",
   },
   {
     id: 84,

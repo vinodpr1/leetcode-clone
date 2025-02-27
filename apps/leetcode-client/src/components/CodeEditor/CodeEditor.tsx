@@ -2,11 +2,8 @@
 import React, { useEffect } from "react";
 import Editor from "@monaco-editor/react";
 
-const CodeEditor = ({ theme, language, code }: { theme: any; language: any, code:any }) => {
-  useEffect(() => {
-    console.log("Use effect", language);
-  }, [language]);
-
+const CodeEditor = ({theme, language, code }: { theme: any; language: any, code:any }) => {
+ 
   function handleEditorChange(value: any, event: any) {
     // here is the current value
     console.log("Value", value);
@@ -31,7 +28,7 @@ const CodeEditor = ({ theme, language, code }: { theme: any; language: any, code
   }
 
   return (
-    // <div className='relative z-10 w-full h-[400px]'>
+    <div className='relative z-10 w-full h-[400px]'>
     <Editor
       height="90vh"
       defaultLanguage={language.value}
@@ -43,7 +40,7 @@ const CodeEditor = ({ theme, language, code }: { theme: any; language: any, code
       onValidate={handleEditorValidation}
       theme={theme}
     />
-    // </div>
+   </div>
   );
 };
 
