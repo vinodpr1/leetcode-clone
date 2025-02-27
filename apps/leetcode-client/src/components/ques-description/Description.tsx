@@ -4,8 +4,8 @@ import React from "react";
 const Description = () => {
   return (
     <div className="col-span-4 border border-gray-600 h-full overflow-hidden rounded bg-[#212020]">
-      <div className="sticky top-0 left-0 px-4 rounded-t py-1 text-sm font-semibold bg-[rgb(49,48,48)]">
-        <h1>Description</h1>
+      <div className="sticky top-0 left-0 px-4 rounded-t py-1 text-sm bg-[rgb(49,48,48)]">
+        <h1 className="font-normal">Description</h1>
       </div>
       <div className="px-4">
         <div className="py-4 flex justify-between">

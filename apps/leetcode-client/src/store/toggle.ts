@@ -1,4 +1,4 @@
-import { atom } from 'recoil';
+import { atom } from "recoil";
 
 export const chooseLanguageToggle = atom<boolean>({
   key: "chooseLanguageToggle", // Unique key for the atom

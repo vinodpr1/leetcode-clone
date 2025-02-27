@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { LANGUAGES } from "@/constants/language";
 import "../../app/globals.css";
 import { Check } from "lucide-react";
@@ -14,19 +14,12 @@ const ThemeDropdown = ({ theme, setTheme }: { theme: any; setTheme: any }) => {
     >
       <div className="w-full h-full">
         <ul className="p-4 gap-4 text-sm font-light">
-          {[
-            "vs-dark",
-            "Clouds",
-            "Cobalt",
-            "Dawn",
-            "Katzenmilch",
-            "twilight",
-          ].map((tm) => {
+          {["vs-dark", "hc-black"].map((tm) => {
             return (
               <li
                 key={tm}
                 onClick={() => handleLanguageChange(tm)}
-                className={`px-4 py-2 hover:bg-hover_global cursor-pointer rounded ${theme == tm && "bg-hover_global"}`}
+                className={`px-4 py-2 my-1 hover:bg-hover_global cursor-pointer rounded ${theme == tm && "bg-hover_global"}`}
                 aria-selected={theme.name === tm}
               >
                 <span className="flex items-center gap-2">

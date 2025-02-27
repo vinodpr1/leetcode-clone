@@ -85,13 +85,6 @@ export const LANGUAGES = [
     label: "Basic",
     value: "basic",
   },
-  
-  // {
-  //   id: 86,
-  //   name: "Clojure",
-  //   label: "Clojure",
-  //   value: "clojure",
-  // },
   {
     id: 51,
     name: "C#",
@@ -189,7 +182,7 @@ export const LANGUAGES = [
     label: "Perl",
     value: "perl",
   },
-  
+
   {
     id: 69,
     name: "Prolog",

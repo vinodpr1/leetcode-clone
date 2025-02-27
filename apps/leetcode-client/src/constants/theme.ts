@@ -1,4 +1,5 @@
 // import { loader } from "@monaco-editor/react";
+// import monacoThemes from "monaco-themes/themes/themelist";
 
 // const monacoThemes = {
 // 	active4d: "Active4D",
@@ -51,7 +52,7 @@
 // 	monoindustrial: "monoindustrial",
 // };
 
-// const defineTheme = (theme) => {
+// const defineTheme = (theme:any) => {
 // 	return new Promise((res) => {
 // 		Promise.all([
 // 			loader.init(),

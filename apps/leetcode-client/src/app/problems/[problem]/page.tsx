@@ -17,25 +17,25 @@ const page = () => {
   });
   const [theme, setTheme] = useState("vs-dark");
   const [code, setCode] = useState(getBoilerCode(language.id));
-  
-  
 
-  useEffect(()=>{
+  useEffect(() => {
     setCode(getBoilerCode(language.id));
-  },[language])
-  
+  }, [language]);
 
-  const [chooseLanguage, setChooseLanguage] = useRecoilState(chooseLanguageToggle);
+  const [chooseLanguage, setChooseLanguage] =
+    useRecoilState(chooseLanguageToggle);
   const [chooseTheme, setChooseTheme] = useRecoilState(chooseThemeToggle);
 
-  
-  const handlePropagation=()=>{
-    setChooseLanguage(false); 
+  const handlePropagation = () => {
+    setChooseLanguage(false);
     setChooseTheme(false);
-  }
+  };
 
   return (
-    <div onClick={handlePropagation} className="h-[100vh] w-[100vw] box-border p-2">
+    <div
+      onClick={handlePropagation}
+      className="h-[100vh] w-[100vw] box-border p-2"
+    >
       <div className="grid grid-cols-10 gap-x-2 h-full">
         <Description />
         <div className="col-span-6 border border-gray-600 h-full rounded bg-[#212020]">
@@ -45,7 +45,7 @@ const page = () => {
             theme={theme}
             setTheme={setTheme}
           />
-          <CodeEditor  theme={theme} language={language} code={code}/>
+          <CodeEditor theme={theme} language={language} code={code} />
         </div>
       </div>
     </div>

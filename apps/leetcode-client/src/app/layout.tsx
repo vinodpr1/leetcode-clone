@@ -30,9 +30,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <RecoilContextProvider>
-            {children}
-          </RecoilContextProvider>
+          <RecoilContextProvider>{children}</RecoilContextProvider>
         </body>
       </html>
     </SessionWrapper>
