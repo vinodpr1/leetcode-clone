@@ -2,10 +2,10 @@
 import React, { useEffect } from "react";
 import Editor from "@monaco-editor/react";
 
-const CodeEditor = ({ theme, language }: { theme: any; language: any }) => {
+const CodeEditor = ({ theme, language, code }: { theme: any; language: any, code:any }) => {
   useEffect(() => {
-    console.log("Use effect");
-  }, []);
+    console.log("Use effect", language);
+  }, [language]);
 
   function handleEditorChange(value: any, event: any) {
     // here is the current value
@@ -14,6 +14,7 @@ const CodeEditor = ({ theme, language }: { theme: any; language: any }) => {
   }
 
   function handleEditorDidMount(editor: any, monaco: any) {
+    console.log(editor, monaco);
     editor.updateOptions({
       fontSize: "16px",
       mouseWheelZoom: true,
@@ -28,12 +29,14 @@ const CodeEditor = ({ theme, language }: { theme: any; language: any }) => {
     // model markers
     // markers.forEach(marker => console.log('onValidate:', marker.message));
   }
+
   return (
     // <div className='relative z-10 w-full h-[400px]'>
     <Editor
       height="90vh"
-      defaultLanguage={language}
+      defaultLanguage={language.value}
       defaultValue="// some comment"
+      value={code}
       onChange={handleEditorChange}
       onMount={handleEditorDidMount}
       beforeMount={handleEditorWillMount}
