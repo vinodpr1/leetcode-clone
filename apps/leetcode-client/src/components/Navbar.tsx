@@ -22,12 +22,12 @@ const Navbar = () => {
             <Link href={"/"}>LeetHub</Link>
           </div>
           <div className="hidden md:flex">
-              <ul className="flex text-sm items-center gap-x-6">
-                <li className="text-white hover:text-[#25f5ae]">Explore</li>
-                <li className="text-white hover:text-[#25f5ae]">Problems</li>
-                <li className="text-white hover:text-[#25f5ae]">Content</li>
-                <li className="text-white hover:text-[#25f5ae]">Interview</li>
-              </ul>
+            <ul className="flex text-sm items-center gap-x-6">
+              <li className="text-white hover:text-[#25f5ae]">Explore</li>
+              <li className="text-white hover:text-[#25f5ae]">Problems</li>
+              <li className="text-white hover:text-[#25f5ae]">Content</li>
+              <li className="text-white hover:text-[#25f5ae]">Interview</li>
+            </ul>
           </div>
         </div>
         <div className="flex items-center gap-x-6">
@@ -37,9 +37,7 @@ const Navbar = () => {
               href="https://github.com/codervinod123"
               className="flex items-center gap-x-1 text-sm "
             >
-             
               <Github className="h-5 w-5 mr-1" />
-               
             </Link>
             <Link href="/signin" className="text-sm">
               Log in
@@ -126,5 +124,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-

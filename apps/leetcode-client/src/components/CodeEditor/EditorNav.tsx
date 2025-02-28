@@ -130,11 +130,11 @@ const EditorNav = ({
   return (
     <div
       onClick={handlePropagation}
-      className="px-4 py-1 text-sm font-semibold bg-[rgb(49,48,48)]"
+      className="px-4 text-sm font-semibold bg-[rgb(49,48,48)]"
     >
       <div className="flex justify-between">
-        <div className="flex items-center gap-8">
-          <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 md:gap-8">
+          <div className="hidden md:flex items-center gap-1 ">
             <CodeXml className="h-4 w-4 text-green-500" />
             <span className="text-gray-400 text-sm">Code</span>
           </div>

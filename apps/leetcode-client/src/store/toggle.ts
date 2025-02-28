@@ -1,16 +1,16 @@
 import { atom } from "recoil";
 
 export const chooseLanguageToggle = atom<boolean>({
-  key: "chooseLanguageToggle", // Unique key for the atom
-  default: false, // Initially closed
+  key: "chooseLanguageToggle", 
+  default: false, 
 });
 
 export const chooseThemeToggle = atom<boolean>({
-  key: "chooseThemeToggle", // Unique key for the atom
-  default: false, // Initially closed
+  key: "chooseThemeToggle",
+  default: false, 
 });
 
 export const activeOutputModal = atom<boolean>({
-  key: "activeOutputModal", // Unique key for the atom
-  default: false, // Initially closed
+  key: "activeOutputModal", 
+  default: false, 
 });

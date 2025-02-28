@@ -3,16 +3,24 @@ import React, { useEffect } from "react";
 import Editor from "@monaco-editor/react";
 import { activeOutputModal } from "@/store/toggle";
 import { useRecoilState } from "recoil";
+import { CodeXml } from "lucide-react";
+import EditorNav from "./EditorNav";
 
 const CodeEditor = ({
   theme,
+  setTheme,
   language,
+  setLanguage,
   code,
+  
 }: {
   theme: any;
+  setTheme: any,
+  setLanguage:any,
   language: any;
   code: any;
 }) => {
+  
   function handleEditorChange(value: any, event: any) {
     // here is the current value
     console.log("Value", value);
@@ -39,9 +47,18 @@ const CodeEditor = ({
   const [isOutputModal, setIsOutputModal] = useRecoilState(activeOutputModal);
 
   return (
-    <div className="w-full">
+    <div className="h-full">
+      <div className="px-4 rounded-t py-1 text-sm bg-[rgb(49,48,48)]">
+      <EditorNav
+         language={language}
+         setLanguage={setLanguage}
+         theme={theme}
+         setTheme={setTheme}
+         code={code}
+      />
+      </div>
       <Editor
-        height={isOutputModal ? "55vh" : "90vh"}
+        height={isOutputModal ? "63vh" : "90vh"}
         defaultLanguage={language.value}
         language={language.value}
         defaultValue="// some comment"

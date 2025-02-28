@@ -3,7 +3,7 @@ import React from "react";
 
 const Description = () => {
   return (
-    <div className="col-span-4 border border-gray-600 h-full overflow-hidden rounded bg-[#212020]">
+    <div className="lang border border-gray-600 h-full overflow-auto rounded bg-[#212020]">
       <div className="sticky top-0 left-0 px-4 rounded-t py-1 text-sm bg-[rgb(49,48,48)]">
         <h1 className="font-normal">Description</h1>
       </div>
@@ -42,7 +42,19 @@ const Description = () => {
           magni architecto repellat incidunt voluptate id numquam iste eligendi
           eaque adipisci placeat asperiores necessitatibus consectetur
           reiciendis explicabo hic voluptatum nisi, corrupti modi. Similique,
-          exercitationem quasi?
+          exercitationem quasi? quasi debitis corrupti voluptates voluptas nisi!
+          Dolorem perferendis, dolorum sint voluptatum consectetur reprehenderit
+          nisi tempore id? Eos iusto a ducimus commodi dolores. In, repellendus
+          odio nulla minima magni architecto repellat incidunt voluptate id
+          numquam iste eligendi eaque adipisci placeat asperiores necessitatibus
+          consectetur reiciendis explicabo hic voluptatum nisi, corrupti modi.
+          Similique, exercitationem quasi? quasi debitis corrupti voluptates
+          voluptas nisi! Dolorem perferendis, dolorum sint voluptatum
+          consectetur reprehenderit nisi tempore id? Eos iusto a ducimus commodi
+          dolores. In, repellendus odio nulla minima magni architecto repellat
+          incidunt voluptate id numquam iste eligendi eaque adipisci placeat
+          asperiores necessitatibus consectetur reiciendis explicabo hic
+          voluptatum nisi, corrupti modi. Similique, exercitationem quasi?
         </p>
       </div>
     </div>
