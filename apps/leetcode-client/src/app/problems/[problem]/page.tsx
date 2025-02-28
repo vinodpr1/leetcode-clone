@@ -43,33 +43,39 @@ const page = () => {
           <Description />
         </div>
         <div className="w-full md:w-[60%] flex flex-col gap-2 rounded  h-full">
-          <div className={`${isOutputModal ? "h-[70%]": "h-full" }`}>
-            <CodeEditor theme={theme} setTheme={setTheme} language={language} setLanguage={setLanguage} code={code} />
+          <div className={`${isOutputModal ? "h-[70%]" : "h-full"}`}>
+            <CodeEditor
+              theme={theme}
+              setTheme={setTheme}
+              language={language}
+              setLanguage={setLanguage}
+              code={code}
+            />
           </div>
-          {isOutputModal &&
+          {isOutputModal && (
             <div className="rounded-t h-[30%] lang row-span-5 w-full bg-[#212020] z-50">
-            <div className="sticky rounded-t flex justify-between top-0 left-0 px-4 text-sm bg-[#292828]">
-              <div className="flex items-center gap-1">
-                <SquareCheck className="h-5 w-5 text-green-500" />
-                <span className="text-white text-sm">Code</span>
-              </div>
+              <div className="sticky rounded-t flex justify-between top-0 left-0 px-4 text-sm bg-[#292828]">
+                <div className="flex items-center gap-1">
+                  <SquareCheck className="h-5 w-5 text-green-500" />
+                  <span className="text-white text-sm">Code</span>
+                </div>
 
-              <button
-                onClick={() => setIsOutputModal((prev: boolean) => !prev)}
-                className="flex items-center gap-1"
-              >
-                <ChevronDown
-                  size={28}
-                  strokeWidth={1.25}
-                  className=" text-white"
-                />
-              </button>
+                <button
+                  onClick={() => setIsOutputModal((prev: boolean) => !prev)}
+                  className="flex items-center gap-1"
+                >
+                  <ChevronDown
+                    size={28}
+                    strokeWidth={1.25}
+                    className=" text-white"
+                  />
+                </button>
+              </div>
+              <span className="text-white">
+                officiis quam dolores laborum sequi consequuntur quas?
+              </span>
             </div>
-            <span className="text-white">
-              officiis quam dolores laborum sequi consequuntur quas?
-            </span>
-          </div>
-          }
+          )}
         </div>
       </div>
     </div>
