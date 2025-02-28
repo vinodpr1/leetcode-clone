@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect } from "react";
 import Editor from "@monaco-editor/react";
+import { activeOutputModal } from "@/store/toggle";
+import { useRecoilState } from "recoil";
 
 const CodeEditor = ({
   theme,
@@ -34,10 +36,12 @@ const CodeEditor = ({
     // markers.forEach(marker => console.log('onValidate:', marker.message));
   }
 
+  const [isOutputModal, setIsOutputModal] = useRecoilState(activeOutputModal);
+
   return (
-    <div className="relative z-10 w-full h-[400px]">
+    <div className="w-full">
       <Editor
-        height="90vh"
+        height={isOutputModal ? "55vh" : "90vh"}
         defaultLanguage={language.value}
         language={language.value}
         defaultValue="// some comment"

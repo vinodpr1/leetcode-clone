@@ -111,6 +111,8 @@ body {
   pointer-events: none;
 }
 
+
+
 .code-block {
   background: rgba(227, 22, 22, 0.1);
   padding: 1.5rem;
@@ -124,3 +126,78 @@ body {
   white-space: pre-wrap;
 }
 
+
+
+
+
+
+
+:root {
+  --leetcode-green: #25f5ae;
+  --leetcode-dark: #0a0a0a;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--leetcode-dark);
+  color: white;
+}
+
+.dot-pattern {
+  background-image: radial-gradient(rgba(37, 245, 174, 0.15) 1px, transparent 1px);
+  background-size: 35px 35px;
+}
+
+.hero-bg {
+  background-color: var(--leetcode-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/src/assets/grid-bg.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.glow {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: var(--leetcode-green);
+  filter: blur(80px);
+  opacity: 0.15;
+}
+
+.leetcode-button {
+  background-color: var(--leetcode-green);
+  color: var(--leetcode-dark);
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+.leetcode-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(37, 245, 174, 0.5);
+}
+
+.top-banner {
+  background: linear-gradient(90deg, rgba(10, 10, 10, 0.8) 0%, rgba(37, 245, 174, 0.1) 100%);
+  backdrop-filter: blur(5px);
+}

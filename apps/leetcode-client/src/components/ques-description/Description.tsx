@@ -19,16 +19,30 @@ const Description = () => {
           <span className="text-green-400 text-sm font-thin">Tag Name</span>
         </button>
         <p className="py-4 text-sm text-gray-100">
-          Given an array of integers nums and an integer target, return indices
-          of the two numbers such that they add up to target. You may assume
-          that each input would have exactly one solution, and you may not use
-          the same element twice. You can return the answer in any order. Given
-          an array of integers nums and an integer target, return indices of the
-          two numbers such that they add up to target. You may assume that each
-          input would have exactly one solution, and you may not use the same
-          element twice. You can return the answer in any order. Given an array
-          of integers nums and an integer target, return indices of the two
-          numbers such that they add up to target.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+          autem exercitationem velit iste blanditiis perspiciatis quia
+          consectetur nobis! Molestias sint modi libero ducimus repudiandae
+          excepturi, distinctio perferendis dolorem nihil quasi inventore rem
+          nesciunt consequuntur aliquid atque praesentium debitis qui eaque
+          nostrum natus quaerat nam ex pariatur? Quae rerum nihil velit beatae
+          minima omnis dolores, iusto nulla labore maiores illo quisquam
+          incidunt sed enim, nam ducimus eveniet odit eos aliquid voluptas ullam
+          recusandae esse vel! Provident dicta explicabo, odio commodi dolor
+          exercitationem repudiandae, beatae libero aliquid porro atque error
+          sequi molestiae pariatur aut cumque! Eligendi explicabo amet ducimus
+          illum magni reprehenderit molestias, iusto totam sequi sapiente
+          numquam iste qui mollitia at suscipit a doloremque consectetur.
+          Consequuntur repellendus deleniti incidunt illum. Accusantium error
+          tempora, voluptas fuga id iure maiores adipisci est deleniti dicta
+          neque architecto! Assumenda voluptate ipsum ea eveniet voluptatibus
+          eum modi accusamus, provident, exercitationem omnis tempore sit nulla
+          quasi debitis corrupti voluptates voluptas nisi! Dolorem perferendis,
+          dolorum sint voluptatum consectetur reprehenderit nisi tempore id? Eos
+          iusto a ducimus commodi dolores. In, repellendus odio nulla minima
+          magni architecto repellat incidunt voluptate id numquam iste eligendi
+          eaque adipisci placeat asperiores necessitatibus consectetur
+          reiciendis explicabo hic voluptatum nisi, corrupti modi. Similique,
+          exercitationem quasi?
         </p>
       </div>
     </div>

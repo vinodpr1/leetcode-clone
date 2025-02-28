@@ -122,22 +122,10 @@ export const LANGUAGES = [
     value: "erlang",
   },
   {
-    id: 87,
-    name: "F#",
-    label: "F#",
-    value: "fsharp",
-  },
-  {
     id: 59,
     name: "Fortran",
     label: "Fortran",
     value: "fortran",
-  },
-  {
-    id: 88,
-    name: "Groovy",
-    label: "Groovy",
-    value: "groovy",
   },
   {
     id: 61,

@@ -9,3 +9,8 @@ export const chooseThemeToggle = atom<boolean>({
   key: "chooseThemeToggle", // Unique key for the atom
   default: false, // Initially closed
 });
+
+export const activeOutputModal = atom<boolean>({
+  key: "activeOutputModal", // Unique key for the atom
+  default: false, // Initially closed
+});
