@@ -24,7 +24,11 @@ const Navbar = () => {
           <div className="hidden md:flex">
             <ul className="flex text-sm items-center gap-x-6">
               <li className="text-white hover:text-[#25f5ae]">Explore</li>
-              <li className="text-white hover:text-[#25f5ae]">Problems</li>
+              <li className="text-white hover:text-[#25f5ae]">
+                <Link href={"/questions"}>
+                  Problems
+                </Link>
+              </li>
               <li className="text-white hover:text-[#25f5ae]">Content</li>
               <li className="text-white hover:text-[#25f5ae]">Interview</li>
             </ul>
@@ -71,7 +75,11 @@ const Navbar = () => {
               <div className="px-8 py-4">
                 <ul className="flex flex-col text-sm gap-y-6">
                   <li className="">Explore</li>
-                  <li>Problems</li>
+                  <li className="cursor-pointer">
+                    <Link href={"/questions"}>
+                      Problems
+                    </Link>
+                  </li>  
                   <li>Content</li>
                   <li>Interview</li>
                 </ul>
