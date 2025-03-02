@@ -110,7 +110,6 @@ const EditorNav = ({
           </button>
         </div>
       </div>
-      <h1>{submissionRes}</h1>
     </div>
   );
 };

@@ -7,6 +7,7 @@ import { CodeXml } from "lucide-react";
 import EditorNav from "./EditorNav";
 
 const CodeEditor = ({
+  openIde,
   theme,
   setTheme,
   language,
@@ -14,6 +15,7 @@ const CodeEditor = ({
   code,
   setCode
 }: {
+  openIde?: boolean
   theme: any;
   setTheme: any;
   setLanguage: any;
@@ -46,7 +48,7 @@ const CodeEditor = ({
 
   return (
     <div className="h-full">
-      <div className="px-4 rounded-t py-1 text-sm bg-[rgb(49,48,48)]">
+      <div className="px-4 rounded py-1 text-sm bg-[rgb(49,48,48)]">
         <EditorNav
           language={language}
           setLanguage={setLanguage}
@@ -56,7 +58,7 @@ const CodeEditor = ({
         />
       </div>
       <Editor
-        height={isOutputModal ? "63vh" : "90vh"}
+        height={isOutputModal && !openIde ? "63vh" : "92vh"}
         defaultLanguage={language.value}
         language={language.value}
         defaultValue="// some comment"

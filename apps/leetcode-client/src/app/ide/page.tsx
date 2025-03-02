@@ -37,22 +37,19 @@ const page = () => {
     setChooseLanguage(false);
     setChooseTheme(false);
   };
+
  
   useEffect(()=>{
       console.log("AAAA gayaaa", submissionRes);
   },[submissionRes])
 
-  return (
-    <div onClick={handlePropagation} className="h-screen p-2 overflow-hidden">
-      <div className="flex flex-col md:flex  md:flex-row gap-2 w-full h-full rounded">
-       
-        <div className="border border-gray-500 md:w-[40%] rounded w-full  h-full">
-          <Description />
-        </div>
 
-        <div className="w-full md:w-[60%] flex flex-col gap-2 rounded  h-full">
-          <div className={`border border-gray-500 rounded ${isOutputModal ? "h-[70%]" : "h-full"}`}>
+  return (
+    <div onClick={handlePropagation} className="h-screen p-2">
+        <div className="w-full flex flex-col md:flex  md:flex-row  gap-2 rounded  h-full">
+           <div className={`border border-gray-500 md:w-[60%] w-full rounded h-full}`}>
             <CodeEditor
+              openIde={true}
               theme={theme}
               setTheme={setTheme}
               language={language}
@@ -60,13 +57,16 @@ const page = () => {
               code={code}
               setCode={setCode}
             />
-          </div>
-          {isOutputModal && (
-            <div className="border border-gray-500  rounded h-[30%] lang row-span-5 w-full bg-[#212020] z-50">
+           </div>
+           <div className="rounded md:w-[40%] w-full min-h-[200px] h-full lang row-span-5 bg-[#212020] z-50 border border-gray-500">
               <div className="sticky rounded flex justify-between top-0 left-0 px-4 text-sm bg-[#292828]">
-                <div className="flex items-center gap-1">
-                  <SquareCheck className="h-5 w-5 text-green-500" />
-                  <span className="text-white text-sm">Code</span>
+                <div className="flex items-center justify-center gap-1">
+                  <SquareCheck
+                     size={28}
+                     strokeWidth={1.2}
+                     className="h-5 w-5 text-green-500" 
+                  />
+                  <span className="text-white text-sm">Output</span>
                 </div>
 
                 <button
@@ -75,29 +75,25 @@ const page = () => {
                 >
                   <ChevronDown
                     size={28}
-                    strokeWidth={1.25}
+                    strokeWidth={1}
                     className=" text-white"
                   />
                 </button>
               </div>
-              <div className="text-white px-8 py-4">
-                <h3>Output.....</h3>
+              <div className="text-white px-8 py-0 h-auto">
                  {
                   submissionRes?
                    <span className="text-xs text-green-500">
                      {submissionRes}
                    </span>
-                 : 
+                  : 
                    <span className="text-xs text-green-500">
                      Running
                   </span>
                  }
-              </div>
-            </div>
-          )}
+          </div>           
+           </div>
         </div>
-
-      </div>
     </div>
   );
 };

@@ -23,14 +23,21 @@ const Navbar = () => {
           </div>
           <div className="hidden md:flex">
             <ul className="flex text-sm items-center gap-x-6">
-              <li className="text-white hover:text-[#25f5ae]">Explore</li>
+              <li className="text-white hover:text-[#25f5ae]">
+                <Link href={"/leaderboard"}>
+                  Leader Board
+                </Link>
+              </li>
               <li className="text-white hover:text-[#25f5ae]">
                 <Link href={"/questions"}>
                   Problems
                 </Link>
               </li>
-              <li className="text-white hover:text-[#25f5ae]">Content</li>
-              <li className="text-white hover:text-[#25f5ae]">Interview</li>
+              <li className="text-white hover:text-[#25f5ae]">
+                <Link href={"/ide"}>
+                  Online IDE
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -38,7 +45,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-x-6">
             <Link
               target="blank"
-              href="https://github.com/codervinod123"
+              href="https://github.com/vinodpr1"
               className="flex items-center gap-x-1 text-sm "
             >
               <Github className="h-5 w-5 mr-1" />
@@ -74,14 +81,21 @@ const Navbar = () => {
             >
               <div className="px-8 py-4">
                 <ul className="flex flex-col text-sm gap-y-6">
-                  <li className="">Explore</li>
+                  <li className="">
+                   <Link href={"/leaderboard"}>
+                     Leader Board
+                   </Link>
+                  </li>
                   <li className="cursor-pointer">
                     <Link href={"/questions"}>
                       Problems
                     </Link>
                   </li>  
-                  <li>Content</li>
-                  <li>Interview</li>
+                  <li className="text-white hover:text-[#25f5ae]">
+                    <Link href={"/ide"}>
+                      Online IDE
+                    </Link>
+                  </li>
                 </ul>
                 <div className="flex gap-4 mt-4 items-center justify-between">
                   <div className="w-1/3">

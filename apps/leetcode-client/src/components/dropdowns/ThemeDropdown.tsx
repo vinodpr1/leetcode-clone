@@ -14,7 +14,7 @@ const ThemeDropdown = ({ theme, setTheme }: { theme: any; setTheme: any }) => {
     >
       <div className="w-full h-full">
         <ul className="p-4 gap-4 text-sm font-light">
-          {["vs-dark", "hc-black"].map((tm) => {
+          {["vs-dark", "hc-black", "light"].map((tm) => {
             return (
               <li
                 key={tm}
