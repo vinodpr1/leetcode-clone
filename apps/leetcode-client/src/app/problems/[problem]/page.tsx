@@ -81,9 +81,19 @@ const page = () => {
                   />
                 </button>
               </div>
-              <span className="text-white">
-                {submissionRes}
-              </span>
+              <div className="text-white px-8 py-4">
+                <h3>Output.....</h3>
+                 {
+                  submissionRes?
+                   <span className="text-xs text-green-500">
+                     {submissionRes}
+                   </span>
+                 : 
+                   <span className="text-xs text-green-500">
+                     Running
+                  </span>
+                 }
+              </div>
             </div>
           )}
         </div>

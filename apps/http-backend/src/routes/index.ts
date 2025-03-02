@@ -1,8 +1,8 @@
 import express from "express";
-import { authRoutes } from "./v1";
+import { apiRoutes } from "./v1";
 
 const appRoutes: any = express.Router();
 
-appRoutes.use("/v1", authRoutes);
+appRoutes.use("/v1", apiRoutes);
 
 export { appRoutes };

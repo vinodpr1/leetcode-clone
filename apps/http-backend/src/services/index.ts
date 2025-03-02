@@ -1,2 +1,4 @@
 import { UserServices } from "./auth-service";
-export { UserServices };
+import { SubmitServices } from "./submission-service";
+
+export { UserServices, SubmitServices };

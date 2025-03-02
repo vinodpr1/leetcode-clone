@@ -57,40 +57,9 @@ const EditorNav = ({
   
   const handleCodeSubmit = async () => {
     setIsOutputModal(true);
-  
-  const response = await axios.post("https://judge0-ce.p.rapidapi.com/submissions",
-    {
-      source_code: code,
-      language_id: language.id,
-    },
-    {
-      headers:
-      {
-        "X-RapidAPI-Key": "6335ed9944msh26ba14106bc0094p10bc52jsn01752b42645c",
-        "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
-        "Content-Type": "application/json"
-    }});
-    console.log("Response", response.data.token);
-    setToken(response.data.token);
-  };
-
-
-  useEffect(()=>{
-     if(token) getSubResponse();
-  },[token])
-
-  const getSubResponse=async()=>{
-    const response2 = await axios.get(`https://judge0-ce.p.rapidapi.com/submissions/${token}`,
-      {
-        headers:
-        {
-          "X-RapidAPI-Key": "6335ed9944msh26ba14106bc0094p10bc52jsn01752b42645c",
-          "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
-          "Content-Type": "application/json"
-       }}
-     );
-      console.log("Jay jay #33", response2.data.stdout);
-      setSubmissionRes(response2.data.stdout);
+    const response = await axios.post("http://localhost:3100/api/v1/submission/submit", {code:code, languageId:language.id});
+    console.log("respoo #34567",response.data.res);
+    setSubmissionRes(response.data.res);
   }
 
   return (

@@ -1,8 +1,10 @@
 import express from "express";
 import { userRoutes } from "./auth";
+import { submissionRoutes } from "./submission";
 
-const authRoutes: any = express.Router();
+const apiRoutes: any = express.Router();
 
-authRoutes.use("/auth", userRoutes);
+apiRoutes.use("/auth", userRoutes);
+apiRoutes.use("/submission",submissionRoutes);
 
-export { authRoutes };
+export { apiRoutes };
