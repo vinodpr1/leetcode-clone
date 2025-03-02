@@ -6,6 +6,7 @@ import {
   activeOutputModal,
   chooseLanguageToggle,
   chooseThemeToggle,
+  submissionResponse
 } from "@/store/toggle";
 import { useRecoilState } from "recoil";
 
@@ -28,6 +29,8 @@ const EditorNav = ({
     useRecoilState(chooseLanguageToggle);
   const [chooseTheme, setChooseTheme] = useRecoilState(chooseThemeToggle);
   const [token, setToken] = useState(null);
+  const [isOutputModal, setIsOutputModal] = useRecoilState(activeOutputModal);
+  const [submissionRes, setSubmissionRes] = useRecoilState(submissionResponse);
 
   useEffect(() => {
     setChooseLanguage(false);
@@ -51,81 +54,44 @@ const EditorNav = ({
     setChooseTheme(false);
   };
 
-  console.log(language.id);
+  
   const handleCodeSubmit = async () => {
-    console.log("Code is Here#3", language, code);
-
     setIsOutputModal(true);
-
-    // const options = {
-    //   method: "POST",
-    //   url: "https://judge0-ce.p.rapidapi.com/submissions",
-    //   headers: {
-    //     "X-RapidAPI-Key": "7390387347msh4e9b26fba6f8f48p196b5cjsn78afec8b833a", // Replace with your API key
-    //     "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
-    //     "Content-Type": "application/json",
-    //   },
-    //   data: {
-    //     source_code: code,
-    //     language_id: language.id,
-    //   },
-    // };
-
-    // const response = await axios.post("https://judge0-ce.p.rapidapi.com/submissions",
-    // {
-    //   source_code: code,
-    //   language_id: language.id,
-    // },
-    // {
-    //   headers:
-    //   {
-    //     "X-RapidAPI-Key": "6335ed9944msh26ba14106bc0094p10bc52jsn01752b42645c",
-    //     "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
-    //     "Content-Type": "application/json"
-    // }});
-    // console.log("Response", response.data.token);
-
-    //   setToken(response.data.token);
-
-    //   const response2 = await axios.get(`https://judge0-ce.p.rapidapi.com/submissions/${token}`,
-    //   {
-    //     headers:
-    //     {
-    //       "X-RapidAPI-Key": "6335ed9944msh26ba14106bc0094p10bc52jsn01752b42645c",
-    //       "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
-    //       "Content-Type": "application/json"
-    //    }}
-    //  );
-    //   console.log(response2.data);
-
-    // axios
-    //   .request(options)
-    //   .then((response) => {
-    //     console.log("REsponse +v1", response.data);
-    //     const options = {
-    //       method: "GET",
-    //       url: `https://judge0-ce.p.rapidapi.com/submissions/${response.data.token}`,
-    //       headers: {
-    //         "X-RapidAPI-Key": "7390387347msh4e9b26fba6f8f48p196b5cjsn78afec8b833a", // Replace with your actual API key
-    //         "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com"
-    //       }
-    //     };
-
-    //     axios
-    //      .request(options)
-    //      .then((response) => {
-    //         console.log(response.data);
-    //     })
-    //     .catch((error) => {
-    //       console.error("Response -ve of code", error);
-    //     });
-    //   })
-    //   .catch((error) => {
-    //     console.error("Response -ve", error);
-    //   });
+  
+  const response = await axios.post("https://judge0-ce.p.rapidapi.com/submissions",
+    {
+      source_code: code,
+      language_id: language.id,
+    },
+    {
+      headers:
+      {
+        "X-RapidAPI-Key": "6335ed9944msh26ba14106bc0094p10bc52jsn01752b42645c",
+        "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
+        "Content-Type": "application/json"
+    }});
+    console.log("Response", response.data.token);
+    setToken(response.data.token);
   };
 
-  const [isOutputModal, setIsOutputModal] = useRecoilState(activeOutputModal);
+
+  useEffect(()=>{
+     if(token) getSubResponse();
+  },[token])
+
+  const getSubResponse=async()=>{
+    const response2 = await axios.get(`https://judge0-ce.p.rapidapi.com/submissions/${token}`,
+      {
+        headers:
+        {
+          "X-RapidAPI-Key": "6335ed9944msh26ba14106bc0094p10bc52jsn01752b42645c",
+          "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
+          "Content-Type": "application/json"
+       }}
+     );
+      console.log("Jay jay #33", response2.data.stdout);
+      setSubmissionRes(response2.data.stdout);
+  }
 
   return (
     <div
@@ -175,8 +141,55 @@ const EditorNav = ({
           </button>
         </div>
       </div>
+      <h1>{submissionRes}</h1>
     </div>
   );
 };
 
 export default EditorNav;
+
+
+
+
+
+
+   // const options = {
+    //   method: "POST",
+    //   url: "https://judge0-ce.p.rapidapi.com/submissions",
+    //   headers: {
+    //     "X-RapidAPI-Key": "7390387347msh4e9b26fba6f8f48p196b5cjsn78afec8b833a", // Replace with your API key
+    //     "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
+    //     "Content-Type": "application/json",
+    //   },
+    //   data: {
+    //     source_code: code,
+    //     language_id: language.id,
+    //   },
+    // };
+
+
+    // axios
+    //   .request(options)
+    //   .then((response) => {
+    //     console.log("REsponse +v1", response.data);
+    //     const options = {
+    //       method: "GET",
+    //       url: `https://judge0-ce.p.rapidapi.com/submissions/${response.data.token}`,
+    //       headers: {
+    //         "X-RapidAPI-Key": "7390387347msh4e9b26fba6f8f48p196b5cjsn78afec8b833a", // Replace with your actual API key
+    //         "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com"
+    //       }
+    //     };
+
+    //     axios
+    //      .request(options)
+    //      .then((response) => {
+    //         console.log(response.data);
+    //     })
+    //     .catch((error) => {
+    //       console.error("Response -ve of code", error);
+    //     });
+    //   })
+    //   .catch((error) => {
+    //     console.error("Response -ve", error);
+    //   });

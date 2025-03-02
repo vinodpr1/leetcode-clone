@@ -12,21 +12,21 @@ const CodeEditor = ({
   language,
   setLanguage,
   code,
+  setCode
 }: {
   theme: any;
   setTheme: any;
   setLanguage: any;
   language: any;
   code: any;
+  setCode: any
 }) => {
   function handleEditorChange(value: any, event: any) {
-    // here is the current value
-    console.log("Value", value);
-    console.log("event", event);
+    setCode(value);
   }
 
   function handleEditorDidMount(editor: any, monaco: any) {
-    console.log(editor, monaco);
+    // console.log("#",editor, monaco);
     editor.updateOptions({
       fontSize: "16px",
       mouseWheelZoom: true,
@@ -34,7 +34,7 @@ const CodeEditor = ({
   }
 
   function handleEditorWillMount(monaco: any) {
-    console.log("beforeMount: the monaco instance:", monaco);
+    // console.log("beforeMount: the monaco instance:", monaco);
   }
 
   function handleEditorValidation(markers: any) {
