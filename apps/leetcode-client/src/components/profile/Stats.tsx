@@ -1,6 +1,6 @@
 import React from "react";
 
-const Stats = () => {
+const Stats = (profileData: any) => {
   return (
     <div className="bg-gray-800 rounded-lg p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
       <div className="flex flex-col items-center justify-center">
@@ -49,7 +49,9 @@ const Stats = () => {
             />
           </svg>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <p className="text-3xl font-bold">413</p>
+            <p className="text-3xl font-bold">
+              {profileData.no_of_solved_questions}
+            </p>
             <p className="text-sm text-gray-400">/3475</p>
             <p className="text-green-500 text-sm mt-1">Solved</p>
           </div>
@@ -60,7 +62,9 @@ const Stats = () => {
       <div className="flex flex-col justify-center">
         <div className="flex justify-between items-center mb-2">
           <span className="text-green-500">Easy</span>
-          <span className="font-bold">185/863</span>
+          <span className="font-bold">
+            {profileData.no_of_solved_questions}/863
+          </span>
         </div>
         <div className="w-full bg-gray-700 h-2 mb-4 rounded-full">
           <div
@@ -71,7 +75,9 @@ const Stats = () => {
 
         <div className="flex justify-between items-center mb-2">
           <span className="text-yellow-500">Med.</span>
-          <span className="font-bold">210/1806</span>
+          <span className="font-bold">
+            {profileData.no_of_solved_questions} /1806
+          </span>
         </div>
         <div className="w-full bg-gray-700 h-2 mb-4 rounded-full">
           <div
@@ -82,7 +88,9 @@ const Stats = () => {
 
         <div className="flex justify-between items-center mb-2">
           <span className="text-red-500">Hard</span>
-          <span className="font-bold">18/806</span>
+          <span className="font-bold">
+            {profileData.no_of_solved_questions}/806
+          </span>
         </div>
         <div className="w-full bg-gray-700 h-2 mb-4 rounded-full">
           <div

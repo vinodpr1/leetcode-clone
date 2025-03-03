@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   User,
   MapPin,
@@ -18,17 +18,34 @@ import {
 } from "lucide-react";
 import Stats from "./Stats";
 import Consistency from "./Consistency";
+import axios from "axios";
+
+interface IProfileData {
+  college: string;
+  email: string;
+  userId: number;
+  location: string;
+  name: string;
+  no_of_solved_questions: number;
+  rank: number;
+  role: string;
+  socialmedia: string;
+  submission_consistency: string;
+}
 
 function Profile() {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  const [profileData, setProfileData] = useState({
-    name: "Vinod Prajapati",
-    userId: "morningstarp936123",
-    location: "India",
-    university: "madan mohan malviya university of technology",
-    linkedinUrl: "https://www.linkedin.com/in/vinod-prajapati",
-    profilePicture:
-      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80",
+  const [profileData, setProfileData] = useState<IProfileData>({
+    college: "JAY",
+    email: "JAY",
+    userId: 1,
+    location: "JAY",
+    name: "jay",
+    no_of_solved_questions: 0,
+    rank: 4,
+    role: "USER",
+    socialmedia: "github",
+    submission_consistency: "NA",
   });
 
   const [formData, setFormData] = useState({ ...profileData });
@@ -52,16 +69,26 @@ function Profile() {
     setIsEditModalOpen(true);
   };
 
+  useEffect(() => {
+    getUserDetails();
+  }, []);
+
+  const getUserDetails = async () => {
+    const response = await axios.get(
+      "http://localhost:3100/api/v1/user/profile",
+      {
+        withCredentials: true,
+      },
+    );
+    setProfileData(response.data.user);
+    console.log(response.data.user);
+  };
+
   return (
     <div className="min-h-screen bg-gray-900 text-white p-4 md:p-8">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="bg-gray-800 rounded-lg p-6">
           <div className="flex items-start gap-4 mb-4">
-            <img
-              src={profileData.profilePicture}
-              alt="Profile"
-              className="w-20 h-20 rounded-lg object-cover"
-            />
             <div>
               <h1 className="text-xl font-bold flex items-center gap-2">
                 {profileData.name} <span className="text-amber-500">🏆</span>
@@ -88,23 +115,24 @@ function Profile() {
 
             <div className="flex items-center gap-3">
               <Building size={18} className="text-gray-400" />
-              <span className="truncate">{profileData.university}</span>
+              <span className="truncate">{profileData.college}</span>
             </div>
 
             <div className="flex items-center gap-3">
               <Globe size={18} className="text-gray-400" />
               <a
-                href={profileData.linkedinUrl}
+                href={"https://github.com/vinodpr1"}
+                target="blank"
                 className="text-blue-400 truncate hover:underline"
               >
-                {profileData.linkedinUrl}
+                {profileData.socialmedia}
               </a>
             </div>
           </div>
         </div>
 
         <div className="lg:col-span-2 space-y-6">
-          <Stats />
+          <Stats profileData={profileData} />
           <Consistency />
         </div>
       </div>

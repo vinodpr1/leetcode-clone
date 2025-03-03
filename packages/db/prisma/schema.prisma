@@ -13,9 +13,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+
+enum Role {
+  USER
+  ADMIN
+}
+
+
 model User {
-  id          Int @id @default(autoincrement())
-  name        String
-  email       String @unique
-  password    String
+  id                        Int @id @default(autoincrement())
+  name                      String
+  email                     String @unique
+  password                  String
+  college                   String?  @default("")
+  location                  String?  @default("")
+  socialmedia               String?  @default("")
+  role                      Role?   @default(USER)
+  no_of_solved_questions    Int? @default(0)
+  submission_consistency    Json?
+  rank                      Int @default(0)
 }
