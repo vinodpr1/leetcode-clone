@@ -1,71 +1,69 @@
-export const questions= 
-{
-  "questions": [
-      {
-        "id": 1,
-        "title": "Two Sum",
-        "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.",
-        "difficulty": "Easy",
-        "examples": [
-          {
-            "input": { "nums": [2, 7, 11, 15], "target": 9 },
-            "output": [0, 1]
-          },
-          {
-            "input": { "nums": [3, 2, 4], "target": 6 },
-            "output": [1, 2]
-          }
-        ],
-        "constraints": [
-          "2 <= nums.length <= 10^4",
-          "-10^9 <= nums[i] <= 10^9",
-          "-10^9 <= target <= 10^9",
-          "Only one valid answer exists."
-        ]
-      },
-      {
-        "id": 2,
-        "title": "Reverse Integer",
-        "description": "Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-2^31, 2^31 - 1], return 0.",
-        "difficulty": "Medium",
-        "examples": [
-          { "input": { "x": 123 }, "output": 321 },
-          { "input": { "x": -123 }, "output": -321 },
-          { "input": { "x": 120 }, "output": 21 }
-        ],
-        "constraints": [
-          "-2^31 <= x <= 2^31 - 1"
-        ]
-      },
-      {
-        "id": 3,
-        "title": "Palindrome Number",
-        "description": "Given an integer x, return true if x is a palindrome, and false otherwise.",
-        "difficulty": "Easy",
-        "examples": [
-          { "input": { "x": 121 }, "output": true },
-          { "input": { "x": -121 }, "output": false },
-          { "input": { "x": 10 }, "output": false }
-        ],
-        "constraints": [
-          "-2^31 <= x <= 2^31 - 1"
-        ]
-      },
-      {
-        "id": 4,
-        "title": "Roman to Integer",
-        "description": "Convert a Roman numeral to an integer.",
-        "difficulty": "Easy",
-        "examples": [
-          { "input": { "s": "III" }, "output": 3 },
-          { "input": { "s": "LVIII" }, "output": 58 },
-          { "input": { "s": "MCMXCIV" }, "output": 1994 }
-        ],
-        "constraints": [
-          "1 <= s.length <= 15",
-          "s contains only characters ('I', 'V', 'X', 'L', 'C', 'D', 'M')",
-          "Valid Roman numeral input."
-        ]
-      }
-    ]
-}
+export const questions = {
+  questions: [
+    {
+      id: 1,
+      title: "Two Sum",
+      description:
+        "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.",
+      difficulty: "Easy",
+      examples: [
+        {
+          input: { nums: [2, 7, 11, 15], target: 9 },
+          output: [0, 1],
+        },
+        {
+          input: { nums: [3, 2, 4], target: 6 },
+          output: [1, 2],
+        },
+      ],
+      constraints: [
+        "2 <= nums.length <= 10^4",
+        "-10^9 <= nums[i] <= 10^9",
+        "-10^9 <= target <= 10^9",
+        "Only one valid answer exists.",
+      ],
+    },
+    {
+      id: 2,
+      title: "Reverse Integer",
+      description:
+        "Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-2^31, 2^31 - 1], return 0.",
+      difficulty: "Medium",
+      examples: [
+        { input: { x: 123 }, output: 321 },
+        { input: { x: -123 }, output: -321 },
+        { input: { x: 120 }, output: 21 },
+      ],
+      constraints: ["-2^31 <= x <= 2^31 - 1"],
+    },
+    {
+      id: 3,
+      title: "Palindrome Number",
+      description:
+        "Given an integer x, return true if x is a palindrome, and false otherwise.",
+      difficulty: "Easy",
+      examples: [
+        { input: { x: 121 }, output: true },
+        { input: { x: -121 }, output: false },
+        { input: { x: 10 }, output: false },
+      ],
+      constraints: ["-2^31 <= x <= 2^31 - 1"],
+    },
+    {
+      id: 4,
+      title: "Roman to Integer",
+      description: "Convert a Roman numeral to an integer.",
+      difficulty: "Easy",
+      examples: [
+        { input: { s: "III" }, output: 3 },
+        { input: { s: "LVIII" }, output: 58 },
+        { input: { s: "MCMXCIV" }, output: 1994 },
+      ],
+      constraints: [
+        "1 <= s.length <= 15",
+        "s contains only characters ('I', 'V', 'X', 'L', 'C', 'D', 'M')",
+        "Valid Roman numeral input.",
+      ],
+    },
+  ],
+};

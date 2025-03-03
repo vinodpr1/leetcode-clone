@@ -24,19 +24,13 @@ const Navbar = () => {
           <div className="hidden md:flex">
             <ul className="flex text-sm items-center gap-x-6">
               <li className="text-white hover:text-[#25f5ae]">
-                <Link href={"/leaderboard"}>
-                  Leader Board
-                </Link>
+                <Link href={"/leaderboard"}>Leader Board</Link>
               </li>
               <li className="text-white hover:text-[#25f5ae]">
-                <Link href={"/questions"}>
-                  Problems
-                </Link>
+                <Link href={"/questions"}>Problems</Link>
               </li>
               <li className="text-white hover:text-[#25f5ae]">
-                <Link href={"/ide"}>
-                  Online IDE
-                </Link>
+                <Link href={"/ide"}>Online IDE</Link>
               </li>
             </ul>
           </div>
@@ -82,19 +76,13 @@ const Navbar = () => {
               <div className="px-8 py-4">
                 <ul className="flex flex-col text-sm gap-y-6">
                   <li className="">
-                   <Link href={"/leaderboard"}>
-                     Leader Board
-                   </Link>
+                    <Link href={"/leaderboard"}>Leader Board</Link>
                   </li>
                   <li className="cursor-pointer">
-                    <Link href={"/questions"}>
-                      Problems
-                    </Link>
-                  </li>  
+                    <Link href={"/questions"}>Problems</Link>
+                  </li>
                   <li className="text-white hover:text-[#25f5ae]">
-                    <Link href={"/ide"}>
-                      Online IDE
-                    </Link>
+                    <Link href={"/ide"}>Online IDE</Link>
                   </li>
                 </ul>
                 <div className="flex gap-4 mt-4 items-center justify-between">

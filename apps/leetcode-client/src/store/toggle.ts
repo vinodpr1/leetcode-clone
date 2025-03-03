@@ -15,9 +15,7 @@ export const activeOutputModal = atom<boolean>({
   default: false,
 });
 
-export const submissionResponse = atom({
+export const submissionResponse = atom<string>({
   key: "activeOutputModal2",
   default: "",
 });
-
-

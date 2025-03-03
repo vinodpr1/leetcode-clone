@@ -1,6 +1,6 @@
 "use client";
 import CodeEditor from "@/components/CodeEditor/CodeEditor";
-import Description from "@/components/ques-description/Description";
+import Description from "@/components/questions/Description";
 import { ChevronDown, SquareCheck } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { getBoilerCode } from "@/constants/boilercode";
@@ -9,7 +9,7 @@ import {
   chooseLanguageToggle,
   chooseThemeToggle,
   activeOutputModal,
-  submissionResponse
+  submissionResponse,
 } from "@/store/toggle";
 
 const page = () => {
@@ -21,7 +21,7 @@ const page = () => {
   });
   const [theme, setTheme] = useState("vs-dark");
   const [code, setCode] = useState(getBoilerCode(language.id));
-  
+
   const [submissionRes, setSubmissionRes] = useRecoilState(submissionResponse);
 
   useEffect(() => {
@@ -37,21 +37,22 @@ const page = () => {
     setChooseLanguage(false);
     setChooseTheme(false);
   };
- 
-  useEffect(()=>{
-      console.log("AAAA gayaaa", submissionRes);
-  },[submissionRes])
+
+  useEffect(() => {
+    console.log("AAAA gayaaa", submissionRes);
+  }, [submissionRes]);
 
   return (
     <div onClick={handlePropagation} className="h-screen p-2 overflow-hidden">
       <div className="flex flex-col md:flex  md:flex-row gap-2 w-full h-full rounded">
-       
         <div className="border border-gray-500 md:w-[40%] rounded w-full  h-full">
           <Description />
         </div>
 
         <div className="w-full md:w-[60%] flex flex-col gap-2 rounded  h-full">
-          <div className={`border border-gray-500 rounded ${isOutputModal ? "h-[70%]" : "h-full"}`}>
+          <div
+            className={`border border-gray-500 rounded ${isOutputModal ? "h-[70%]" : "h-full"}`}
+          >
             <CodeEditor
               theme={theme}
               setTheme={setTheme}
@@ -82,21 +83,17 @@ const page = () => {
               </div>
               <div className="text-white px-8 py-4">
                 <h3>Output.....</h3>
-                 {
-                  submissionRes?
-                   <span className="text-xs text-green-500">
-                     {submissionRes}
-                   </span>
-                 : 
-                   <span className="text-xs text-green-500">
-                     Running
+                {submissionRes ? (
+                  <span className="text-xs text-green-500">
+                    {submissionRes}
                   </span>
-                 }
+                ) : (
+                  <span className="text-xs text-green-500">Running</span>
+                )}
               </div>
             </div>
           )}
         </div>
-
       </div>
     </div>
   );

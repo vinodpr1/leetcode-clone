@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/api/auth/[...nextauth].js", "src/lib/RecoilContextProvider.js", "src/app/(navigatior)/leaderboard"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/api/auth/[...nextauth].js", "src/lib/RecoilContextProvider.jsx", "src/app/(navigatior)/leaderboard"],
   "exclude": ["node_modules"]
 }

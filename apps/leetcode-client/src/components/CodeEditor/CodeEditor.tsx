@@ -13,15 +13,15 @@ const CodeEditor = ({
   language,
   setLanguage,
   code,
-  setCode
+  setCode,
 }: {
-  openIde?: boolean
+  openIde?: boolean;
   theme: any;
   setTheme: any;
   setLanguage: any;
   language: any;
   code: any;
-  setCode: any
+  setCode: any;
 }) => {
   function handleEditorChange(value: any, event: any) {
     setCode(value);

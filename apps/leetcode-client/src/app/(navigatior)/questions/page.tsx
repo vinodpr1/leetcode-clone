@@ -1,8 +1,8 @@
-import Questions from '@/components/questions/Questions'
-import React from 'react'
+import Questions from "@/components/questions/Questions";
+import React from "react";
 
 const page = () => {
-  return <Questions/>
-}
+  return <Questions />;
+};
 
-export default page
+export default page;

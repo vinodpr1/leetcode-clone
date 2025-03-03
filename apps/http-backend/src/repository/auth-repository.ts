@@ -9,13 +9,10 @@ class UserRepository {
   async SignUp(data: any) {
     try {
       const hashedPassword = bcrypt.hashSync(data.password, 10);
-      console.log("PPP", data.password);
       const user = await prismaClient.user.create({
         data: { name: data.name, email: data.email, password: hashedPassword },
       });
       const jwtToken = jwt.sign({ id: user.id }, "vinodpr");
-      console.log("token", jwtToken);
-      console.log("User", user);
       return jwtToken;
     } catch (error) {
       console.log("Eoor has occured at user controller");

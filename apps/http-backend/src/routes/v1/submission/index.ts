@@ -3,6 +3,6 @@ import { Submit } from "../../../controllers";
 
 const submissionRoutes: any = express.Router();
 
-submissionRoutes.post("/submit", Submit)
+submissionRoutes.post("/submit", Submit);
 
 export { submissionRoutes };

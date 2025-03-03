@@ -1,5 +1,3 @@
-// fetched from 'https://judge0-ce.p.rapidapi.com/languages'
-
 export const LANGUAGES = [
   {
     id: 63,

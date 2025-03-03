@@ -5,7 +5,7 @@ export const Submit = async (req: any, res: any) => {
   try {
     const data = req.body;
     console.log(data);
-    const response =await submitService.SubmitQuestion(data);
+    const response = await submitService.SubmitQuestion(data);
     res.status(200).json({
       res: response,
       message: "Submission made successfully",

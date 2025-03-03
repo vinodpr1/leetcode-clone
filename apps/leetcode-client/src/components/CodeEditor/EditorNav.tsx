@@ -6,7 +6,7 @@ import {
   activeOutputModal,
   chooseLanguageToggle,
   chooseThemeToggle,
-  submissionResponse
+  submissionResponse,
 } from "@/store/toggle";
 import { useRecoilState } from "recoil";
 
@@ -54,13 +54,15 @@ const EditorNav = ({
     setChooseTheme(false);
   };
 
-  
   const handleCodeSubmit = async () => {
     setIsOutputModal(true);
-    const response = await axios.post("http://localhost:3100/api/v1/submission/submit", {code:code, languageId:language.id});
-    console.log("respoo #34567",response.data.res);
+    const response = await axios.post(
+      "http://localhost:3100/api/v1/submission/submit",
+      { code: code, languageId: language.id },
+    );
+    console.log("respoo #34567", response.data.res);
     setSubmissionRes(response.data.res);
-  }
+  };
 
   return (
     <div
@@ -116,48 +118,42 @@ const EditorNav = ({
 
 export default EditorNav;
 
+// const options = {
+//   method: "POST",
+//   url: "https://judge0-ce.p.rapidapi.com/submissions",
+//   headers: {
+//     "X-RapidAPI-Key": "7390387347msh4e9b26fba6f8f48p196b5cjsn78afec8b833a", // Replace with your API key
+//     "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
+//     "Content-Type": "application/json",
+//   },
+//   data: {
+//     source_code: code,
+//     language_id: language.id,
+//   },
+// };
 
+// axios
+//   .request(options)
+//   .then((response) => {
+//     console.log("REsponse +v1", response.data);
+//     const options = {
+//       method: "GET",
+//       url: `https://judge0-ce.p.rapidapi.com/submissions/${response.data.token}`,
+//       headers: {
+//         "X-RapidAPI-Key": "7390387347msh4e9b26fba6f8f48p196b5cjsn78afec8b833a", // Replace with your actual API key
+//         "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com"
+//       }
+//     };
 
-
-
-
-   // const options = {
-    //   method: "POST",
-    //   url: "https://judge0-ce.p.rapidapi.com/submissions",
-    //   headers: {
-    //     "X-RapidAPI-Key": "7390387347msh4e9b26fba6f8f48p196b5cjsn78afec8b833a", // Replace with your API key
-    //     "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
-    //     "Content-Type": "application/json",
-    //   },
-    //   data: {
-    //     source_code: code,
-    //     language_id: language.id,
-    //   },
-    // };
-
-
-    // axios
-    //   .request(options)
-    //   .then((response) => {
-    //     console.log("REsponse +v1", response.data);
-    //     const options = {
-    //       method: "GET",
-    //       url: `https://judge0-ce.p.rapidapi.com/submissions/${response.data.token}`,
-    //       headers: {
-    //         "X-RapidAPI-Key": "7390387347msh4e9b26fba6f8f48p196b5cjsn78afec8b833a", // Replace with your actual API key
-    //         "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com"
-    //       }
-    //     };
-
-    //     axios
-    //      .request(options)
-    //      .then((response) => {
-    //         console.log(response.data);
-    //     })
-    //     .catch((error) => {
-    //       console.error("Response -ve of code", error);
-    //     });
-    //   })
-    //   .catch((error) => {
-    //     console.error("Response -ve", error);
-    //   });
+//     axios
+//      .request(options)
+//      .then((response) => {
+//         console.log(response.data);
+//     })
+//     .catch((error) => {
+//       console.error("Response -ve of code", error);
+//     });
+//   })
+//   .catch((error) => {
+//     console.error("Response -ve", error);
+//   });

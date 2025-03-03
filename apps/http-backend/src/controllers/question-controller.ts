@@ -1,8 +1,8 @@
 import { QuestionServices } from "../services/question-service";
-const questionServices= new QuestionServices();
+const questionServices = new QuestionServices();
 export const getQuestions = async (req: any, res: any) => {
   try {
-    const questions =await questionServices.getQuestion();
+    const questions = await questionServices.getQuestion();
     console.log("Questionnnnnns", questions);
     res.status(200).json({
       res: questions,
