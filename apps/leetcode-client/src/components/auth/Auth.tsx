@@ -2,7 +2,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import "../../app/globals.css";
-import { signInAction, signUpAction } from "./authActions";
+import AuthForm from "./AuthForm";
 
 interface IAuth {
   component: string;
@@ -19,6 +19,8 @@ const Auth = ({
   userAuthOption,
   userAuthAction,
 }: IAuth) => {
+  // const [response, setResponse] = useFormState(signInAction,{ success: true, message: ""});
+
   return (
     <div className="h-[100vh] w-[100vw] overflow-x-hidden">
       <div className="h-full w-full flex flex-col lg:grid lg:grid-cols-10">
@@ -106,66 +108,14 @@ const Auth = ({
                   <div className="h-[1px] w-16 bg-gray-400"></div>
                 </div>
 
-                <form
-                  action={component == "signin" ? signInAction : signUpAction}
-                  className="flex flex-col gap-2 w-full pb-6"
-                >
-                  {component == "signup" ? (
-                    <div className="w-full flex flex-col gap-2">
-                      <label htmlFor="name">
-                        <span className="text-sm text-gray-400">Name</span>
-                      </label>
-                      <div>
-                        <input
-                          name="name"
-                          className="w-[100%] bg-[#212121] border border-gray-600 rounded px-4 py-2"
-                          type="text"
-                        />
-                      </div>
-                    </div>
-                  ) : (
-                    ""
-                  )}
+                <AuthForm component={component} />
 
-                  <div className="w-full flex flex-col gap-2">
-                    <label htmlFor="email">
-                      <span className="text-sm text-gray-400">Email</span>
-                    </label>
-                    <div>
-                      <input
-                        name="email"
-                        className="w-[100%] bg-[#212121] border border-gray-600 rounded px-4 py-2"
-                        type="text"
-                      />
-                    </div>
-                  </div>
-
-                  <div className=" w-full flex flex-col gap-2">
-                    <label htmlFor="email">
-                      <span className="text-sm text-gray-400">Password</span>
-                    </label>
-                    <div>
-                      <input
-                        name="password"
-                        className="w-[100%] bg-[#212121] border border-gray-600 rounded px-4 py-2"
-                        type="text"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="bg-[#212121] py-2 rounded border border-gray-600 w-full flex flex-col gap-2">
-                    <button type="submit" className="text-gray-500">
-                      {component == "signin" ? "Log in" : "Sign up"}
-                    </button>
-                  </div>
-
-                  <h3 className="flex gap-2 justify-center items-center">
-                    <span className="text-gray-400">{userAuthOption}</span>{" "}
-                    <Link href={component == "signup" ? "/signin" : "signup"}>
-                      <span className="text-blue-600">{userAuthAction}</span>
-                    </Link>
-                  </h3>
-                </form>
+                <h3 className="flex gap-2 justify-center items-center">
+                  <span className="text-gray-400">{userAuthOption}</span>{" "}
+                  <Link href={component == "signup" ? "/signin" : "signup"}>
+                    <span className="text-blue-600">{userAuthAction}</span>
+                  </Link>
+                </h3>
               </div>
             </div>
           </div>
