@@ -39,6 +39,21 @@ class UserRepository {
       throw error;
     }
   }
+
+  async getBulkUser() {
+    try {
+      const users = await prismaClient.user.findMany({
+        omit: { password: true },
+      });
+      return users;
+    } catch (error) {
+      console.log(
+        "Eoor has occured at repository controller while fetchig all users",
+        error,
+      );
+      throw error;
+    }
+  }
 }
 
 export { UserRepository };

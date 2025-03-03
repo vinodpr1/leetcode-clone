@@ -1,5 +1,5 @@
-import { SignIn, SignUp } from "./auth-controller";
+import { SignIn, SignUp, getBulkUser } from "./user-controller";
 import { Submit } from "./submission-contaoller";
 import { getQuestions } from "./question-controller";
 
-export { SignIn, SignUp, Submit, getQuestions };
+export { SignIn, SignUp, getBulkUser, Submit, getQuestions };

@@ -32,3 +32,18 @@ export const SignIn = async (req: any, res: any) => {
     });
   }
 };
+
+export const getBulkUser = async (req: any, res: any) => {
+  try {
+    const user = await userServices.getBulkUser();
+    res.status(200).json({
+      message: "User fetched successfully",
+      user: user,
+    });
+  } catch (error) {
+    res.status(400).json({
+      message: "Users can't fetched successfully",
+      err: error,
+    });
+  }
+};

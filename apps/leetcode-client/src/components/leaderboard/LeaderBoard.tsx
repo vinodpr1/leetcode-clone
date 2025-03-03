@@ -4,36 +4,30 @@ import Link from "next/link";
 import { CircleCheckBig, FileCode } from "lucide-react";
 
 const LeaderBoard = async () => {
-  const response = await axios.get("http://localhost:3100/api/v1/questions");
-  const data = response.data.res.questions;
+  const response = await axios.get("http://localhost:3100/api/v1/user/bulk");
+  const users = response.data.user;
 
   return (
-    <div className="mx-auto w-full">
-      <div className=" w-full flex justify-between">
-        <div className="flex justify-between w-full text-gray-200 uppercase text-sm leading-normal border-b border-gray-700">
-          <span className="py-3 px-6 text-left font-semibold">Status</span>
-          <span className="py-3 px-6 text-left font-semibold">Description</span>
-          <span className="py-3 px-6 text-left font-semibold">Solution</span>
-          <span className="py-3 px-6 text-left font-semibold">Difficulty</span>
-        </div>
+    <div className="mx-auto w-full px-8">
+      <div className="grid grid-cols-3 px-4 w-full text-gray-200 uppercase text-sm leading-normal">
+        <span className="text-left font-semibold">Ranking</span>
+        <span className="text-left font-semibold">Username</span>
+        <span className="text-left font-semibold">email</span>
       </div>
       <div className="text-gray-400 text-sm">
-        {data.map((data: any, index: number) => {
+        {users.map((user: any, index: number) => {
           return (
-            <Link key={index} href={"/problems/2333"}>
-              <div className="flex justify-between hover:bg-hover_global transition-all duration-300">
-                <span className="py-3 px-6">
-                  <CircleCheckBig className="h-4 w-4 text-green-500" />
-                </span>
-                <span className="py-3 px-6">
-                  <span>Merge Two 2D Arrays by Summing Values</span>
-                </span>
-                <span className="py-3 px-6">
-                  <FileCode className="h-4 w-4 text-green-500" />
-                </span>
-                <span className="py-3 px-6">
-                  <span>Easy</span>
-                </span>
+            <Link key={user.id} href={"/problems/2333"}>
+              <div className="grid grid-cols-3 px-4 w-full text-gray-500 text-sm font-normal hover:bg-hover_global transition-all duration-300">
+                <div className="flex py-2 items-center">
+                  <span className="text-left font-semibold">{user.id}</span>
+                </div>
+                <div className="flex py-2 items-center">
+                  <span className="text-left font-semibold">{user.name}</span>
+                </div>
+                <div className="flex py-2 items-center">
+                  <span className="text-left font-semibold">{user.email}</span>
+                </div>
               </div>
             </Link>
           );

@@ -22,6 +22,16 @@ class UserServices {
       throw error;
     }
   }
+
+  async getBulkUser() {
+    try {
+      const response = await userRepository.getBulkUser();
+      return response;
+    } catch (error) {
+      console.log("Eoor has occured at user controller");
+      throw error;
+    }
+  }
 }
 
 export { UserServices };

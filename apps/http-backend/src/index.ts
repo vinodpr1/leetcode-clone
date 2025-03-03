@@ -12,5 +12,5 @@ app.use(bodyparser.urlencoded({ extended: true }));
 app.use("/api", appRoutes);
 
 app.listen(3100, async () => {
-  console.log("Server is running on port 3300");
+  console.log("Server is running on port 3100");
 });

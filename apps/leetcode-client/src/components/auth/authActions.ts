@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 export async function signInAction(formData: FormData) {
   const email = formData.get("email") as string;
   const password = formData.get("password") as string;
-  const response = await fetch("http://localhost:3100/api/v1/auth/signin", {
+  const response = await fetch("http://localhost:3100/api/v1/user/signin", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -29,7 +29,7 @@ export async function signUpAction(formData: FormData) {
   const email = formData.get("email") as string;
   const password = formData.get("password") as string;
 
-  const response = await fetch("http://localhost:3100/api/v1/auth/signup", {
+  const response = await fetch("http://localhost:3100/api/v1/user/signup", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -5,7 +5,7 @@ import { questionRoutes } from "./questions";
 
 const apiRoutes: any = express.Router();
 
-apiRoutes.use("/auth", userRoutes);
+apiRoutes.use("/user", userRoutes);
 apiRoutes.use("/submission", submissionRoutes);
 apiRoutes.use("/questions", questionRoutes);
 
