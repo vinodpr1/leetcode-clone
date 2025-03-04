@@ -5,7 +5,7 @@ import { LoadingOutlined } from "@ant-design/icons";
 import axios from "axios";
 import { signInAction, signUpAction } from "./authActions";
 import { userSchema, authSchema } from "@repo/common/types";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 
 const AuthForm = ({ component }: { component: string }) => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -17,31 +17,29 @@ const AuthForm = ({ component }: { component: string }) => {
     console.log("FORAMDATA", formData.get("email"));
     try {
       if (component == "signin") {
-        
         const data = {
           email: formData.get("email"),
           password: formData.get("password"),
-        }
+        };
         const zodRes = authSchema.safeParse(data);
-        if(!zodRes.success){
-           toast.error("Please check credential");
-           setLoading(false);
-           return;
+        if (!zodRes.success) {
+          toast.error("Please check credential");
+          setLoading(false);
+          return;
         }
 
         signInAction(formData);
       } else {
-        
         const data = {
           name: formData.get("name"),
           email: formData.get("email"),
           password: formData.get("password"),
-        }
+        };
         const zodRes = userSchema.safeParse(data);
-        if(!zodRes.success){
-           toast.error("Please check credential");
-           setLoading(false);
-           return;
+        if (!zodRes.success) {
+          toast.error("Please check credential");
+          setLoading(false);
+          return;
         }
 
         signUpAction(formData);
@@ -111,7 +109,7 @@ const AuthForm = ({ component }: { component: string }) => {
           "Sign up"
         )}
       </button>
-      <ToastContainer/>
+      <ToastContainer />
     </form>
   );
 };

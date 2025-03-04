@@ -13,7 +13,9 @@ export async function signInAction(formData: FormData) {
     body: JSON.stringify({ email, password }),
   });
 
+  // console.log("AAli re aali", response);
   const data = await response.json();
+  console.log("AAli re aali", data);
 
   (await cookies()).set("authToken", data.token, {
     httpOnly: true,
@@ -21,7 +23,7 @@ export async function signInAction(formData: FormData) {
     maxAge: 60 * 60,
     path: "/",
   });
-  redirect("/ide");
+  // redirect("/ide");
 }
 
 export async function signUpAction(formData: FormData) {
