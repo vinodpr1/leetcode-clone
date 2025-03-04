@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import SessionWrapper from "@/components/SessionWrapper";
 import RecoilContextProvider from "@/lib/RecoilContextProvider";
-import Navbar from "@/components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,14 +24,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <SessionWrapper>
-      <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          <RecoilContextProvider>{children}</RecoilContextProvider>
-        </body>
-      </html>
-    </SessionWrapper>
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <RecoilContextProvider>{children}</RecoilContextProvider>
+      </body>
+    </html>
   );
 }

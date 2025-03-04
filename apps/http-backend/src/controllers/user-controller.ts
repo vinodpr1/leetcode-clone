@@ -4,7 +4,6 @@ import jwt, { JwtPayload } from "jsonwebtoken";
 import { authSchema, userSchema } from "@repo/common/types";
 import { Request, Response } from "express";
 
-
 const userServices = new UserServices();
 
 export const SignUp = async (req: Request, res: Response) => {
@@ -15,18 +14,18 @@ export const SignUp = async (req: Request, res: Response) => {
         message: "Validation failed",
         success: false,
         error: zodRes.error.errors.map((issue) => ({
-          field: issue.path.join('.'),
+          field: issue.path.join("."),
           message: issue.message,
         })),
       });
     }
-    const token = await userServices.SignUp( req.body);
+    const token = await userServices.SignUp(req.body);
     return res.status(200).json({
       message: "signin successfully",
       success: true,
       data: {
-         token: token
-      }
+        token: token,
+      },
     });
   } catch (error) {
     return res.status(400).json({
@@ -45,7 +44,7 @@ export const SignIn = async (req: Request, res: Response) => {
         message: "Validation failed",
         success: false,
         error: zodRes.error.errors.map((issue) => ({
-          field: issue.path.join('.'),
+          field: issue.path.join("."),
           message: issue.message,
         })),
       });
@@ -55,8 +54,8 @@ export const SignIn = async (req: Request, res: Response) => {
       message: "signin successfully",
       success: true,
       data: {
-         token: token
-      }
+        token: token,
+      },
     });
   } catch (error: any) {
     return res.status(400).json({
@@ -73,9 +72,9 @@ export const getBulkUser = async (req: Request, res: Response) => {
     return res.status(400).json({
       message: "users find successfully",
       success: false,
-      data:{
-        user: user
-      }
+      data: {
+        user: user,
+      },
     });
   } catch (error) {
     return res.status(400).json({
@@ -96,9 +95,9 @@ export const getProfile = async (req: Request, res: Response) => {
     return res.status(400).json({
       message: "user find successfully",
       success: false,
-      data:{
-        user: user
-      }
+      data: {
+        user: user,
+      },
     });
   } catch (error) {
     return res.status(400).json({

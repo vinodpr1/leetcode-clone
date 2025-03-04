@@ -4,8 +4,6 @@ import Link from "next/link";
 import { CircleCheckBig, FileCode } from "lucide-react";
 
 const LeaderBoard = async () => {
-
-
   return (
     <div className="mx-auto w-full px-8">
       <div className="grid grid-cols-3 px-4 w-full text-gray-200 uppercase text-sm leading-normal">
