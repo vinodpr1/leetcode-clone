@@ -1,19 +1,23 @@
 import { prismaClient } from "@repo/db/prismaClient";
 import { UserServices } from "../services";
 import jwt, { JwtPayload } from "jsonwebtoken";
+import { authSchema, userSchema } from "@repo/common/types";
 
 const userServices = new UserServices();
 
 export const SignUp = async (req: any, res: any) => {
   try {
-    const data = req.body;
-    const user = await userServices.SignUp(data);
-    res.status(200).json({
+    const zodRes = userSchema.safeParse(req.body);
+    if (!zodRes.success) {
+      return res.status(400).json({ error: zodRes.error.errors });
+    }
+    const user = await userServices.SignUp( req.body);
+    return res.status(200).json({
       message: "signup successfully",
       token: user,
     });
   } catch (error) {
-    res.status(400).json({
+    return res.status(400).json({
       message: "can't signup successfully",
       err: error,
     });
@@ -22,14 +26,17 @@ export const SignUp = async (req: any, res: any) => {
 
 export const SignIn = async (req: any, res: any) => {
   try {
-    const data = req.body;
-    const user = await userServices.SignIn(data);
-    res.status(200).json({
+    const zodRes = authSchema.safeParse(req.body);
+    if (!zodRes.success) {
+      return res.status(400).json({ error: zodRes.error.errors });
+    }
+    const user = await userServices.SignIn(req.body);
+    return res.status(200).json({
       message: "signin successfully",
       token: user,
     });
   } catch (error) {
-    res.status(400).json({
+    return res.status(400).json({
       message: "can't signin successfully",
       err: error,
     });

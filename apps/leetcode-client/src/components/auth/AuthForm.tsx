@@ -4,20 +4,46 @@ import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 import axios from "axios";
 import { signInAction, signUpAction } from "./authActions";
+import { userSchema, authSchema } from "@repo/common/types";
+import { ToastContainer, toast } from 'react-toastify';
 
 const AuthForm = ({ component }: { component: string }) => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     setLoading(true);
-
     const formData = new FormData(e.currentTarget);
+    console.log("FORAMDATA", formData.get("email"));
     try {
       if (component == "signin") {
+        
+        const data = {
+          email: formData.get("email"),
+          password: formData.get("password"),
+        }
+        const zodRes = authSchema.safeParse(data);
+        if(!zodRes.success){
+           toast.error("Please check credential");
+           setLoading(false);
+           return;
+        }
+
         signInAction(formData);
       } else {
+        
+        const data = {
+          name: formData.get("name"),
+          email: formData.get("email"),
+          password: formData.get("password"),
+        }
+        const zodRes = userSchema.safeParse(data);
+        if(!zodRes.success){
+           toast.error("Please check credential");
+           setLoading(false);
+           return;
+        }
+
         signUpAction(formData);
       }
     } catch (error) {
@@ -85,6 +111,7 @@ const AuthForm = ({ component }: { component: string }) => {
           "Sign up"
         )}
       </button>
+      <ToastContainer/>
     </form>
   );
 };

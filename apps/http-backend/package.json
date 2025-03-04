@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@repo/db": "workspace:*",
+    "@repo/common": "workspace:*",
     "@types/axios": "^0.14.4",
     "@types/bcrypt": "^5.0.2",
     "@types/body-parser": "^1.19.5",
