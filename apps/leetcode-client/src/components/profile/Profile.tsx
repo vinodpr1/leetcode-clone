@@ -1,20 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import {
-  User,
   MapPin,
   Building,
-  Globe,
-  Eye,
-  MessageSquare,
-  Award,
-  ChevronRight,
-  FileText,
-  List,
-  MessageCircle,
-  Activity,
-  X,
-  Camera,
+  Globe
 } from "lucide-react";
 import Stats from "./Stats";
 import Consistency from "./Consistency";

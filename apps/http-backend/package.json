@@ -2,11 +2,12 @@
   "name": "http-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "/src/index.js",
   "scripts": {
+    "stop": "taskkill -f -im node.exe",
     "build": "tsc -b",
-    "start": "nodemon --watch src --ext ts,json --exec ts-node ./dist/index.js",
-    "dev": "npm run build && npm run start"
+    "start": "nodemon dist/index.js",
+    "dev": "tsc -b && nodemon src/index.ts"
   },
   "keywords": [],
   "author": "",

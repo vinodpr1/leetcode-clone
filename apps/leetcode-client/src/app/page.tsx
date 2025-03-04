@@ -1,5 +1,4 @@
 import React from "react";
-import { Database, Github, ChevronRight } from "lucide-react";
 import "./globals.css";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";

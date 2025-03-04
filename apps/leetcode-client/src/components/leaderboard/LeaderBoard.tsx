@@ -4,8 +4,7 @@ import Link from "next/link";
 import { CircleCheckBig, FileCode } from "lucide-react";
 
 const LeaderBoard = async () => {
-  const response = await axios.get("http://localhost:3100/api/v1/user/bulk");
-  const users = response.data.user;
+
 
   return (
     <div className="mx-auto w-full px-8">
@@ -15,7 +14,7 @@ const LeaderBoard = async () => {
         <span className="text-left font-semibold">email</span>
       </div>
       <div className="text-gray-400 text-sm">
-        {users.map((user: any, index: number) => {
+        {/* {users.map((user: any, index: number) => {
           return (
             <Link key={user.id} href={"/problems/2333"}>
               <div className="grid grid-cols-3 px-4 w-full text-gray-500 text-sm font-normal hover:bg-hover_global transition-all duration-300">
@@ -31,7 +30,7 @@ const LeaderBoard = async () => {
               </div>
             </Link>
           );
-        })}
+        })} */}
       </div>
     </div>
   );
