@@ -92,9 +92,9 @@ export const getProfile = async (req: Request, res: Response) => {
       where: { id: data.id },
       omit: { password: true },
     });
-    return res.status(400).json({
+    return res.status(200).json({
       message: "user find successfully",
-      success: false,
+      success: true,
       data: {
         user: user,
       },

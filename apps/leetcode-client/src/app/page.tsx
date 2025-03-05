@@ -3,8 +3,13 @@ import "./globals.css";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { cookies } from "next/headers";
 
-function App() {
+async function App() {
+
+  const cookieStore = await cookies()  
+  const authToken = cookieStore.get('authToken')?.value;
+
   return (
     <div className="min-h-screen w-screen flex flex-col">
       <div className="w-full border-b border-gray-500">

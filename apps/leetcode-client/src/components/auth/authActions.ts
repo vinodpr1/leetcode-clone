@@ -17,13 +17,13 @@ export async function signInAction(formData: FormData) {
   const data = await response.json();
   console.log("AAli re aali", data);
 
-  (await cookies()).set("authToken", data.token, {
+  (await cookies()).set("authToken", data.data.token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     maxAge: 60 * 60,
     path: "/",
   });
-  // redirect("/ide");
+  redirect("/ide");
 }
 
 export async function signUpAction(formData: FormData) {

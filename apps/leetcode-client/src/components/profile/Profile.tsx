@@ -4,6 +4,7 @@ import { MapPin, Building, Globe } from "lucide-react";
 import Stats from "./Stats";
 import Consistency from "./Consistency";
 import axios from "axios";
+import Image from "next/image";
 
 interface IProfileData {
   college: string;
@@ -21,16 +22,16 @@ interface IProfileData {
 function Profile() {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [profileData, setProfileData] = useState<IProfileData>({
-    college: "JAY",
-    email: "JAY",
+    college: "",
+    email: "",
     userId: 1,
-    location: "JAY",
-    name: "jay",
+    location: "",
+    name: "",
     no_of_solved_questions: 0,
     rank: 4,
-    role: "USER",
-    socialmedia: "github",
-    submission_consistency: "NA",
+    role: "",
+    socialmedia: "",
+    submission_consistency: "",
   });
 
   const [formData, setFormData] = useState({ ...profileData });
@@ -59,30 +60,33 @@ function Profile() {
   }, []);
 
   const getUserDetails = async () => {
+    console.log("Ja rahi hai");
     const response = await axios.get(
       "http://localhost:3100/api/v1/user/profile",
       {
         withCredentials: true,
       },
     );
-    setProfileData(response.data.user);
-    console.log(response.data.user);
+    setProfileData(response.data.data.user);
   };
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-4 md:p-8">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="bg-gray-800 rounded-lg p-6">
-          <div className="flex items-start gap-4 mb-4">
-            <div>
-              <h1 className="text-xl font-bold flex items-center gap-2">
-                {profileData.name} <span className="text-amber-500">🏆</span>
-              </h1>
-              <p className="text-gray-400 text-sm">{profileData.userId}</p>
-              <p className="mt-2">
-                Rank <span className="font-bold">194,865</span>
-              </p>
-            </div>
+            <div className="flex items-center gap-x-8 mb-4">
+              <div className="w-12">
+                <Image className="rounded" height={48} width={48} src={"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"} alt="profile-pi"/>
+               </div>
+          
+             <div className="">
+               <h1 className="text-xl font-mmedium flex items-center gap-2">
+                  {profileData.name} <span className="text-amber-500">🏆</span>
+                </h1>
+                <p className="mt-1 text-sm">
+                  Rank <span className="font-medium">194,865</span>
+                </p>
+              </div>
           </div>
 
           <button

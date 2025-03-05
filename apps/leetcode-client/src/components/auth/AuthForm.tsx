@@ -27,7 +27,6 @@ const AuthForm = ({ component }: { component: string }) => {
           setLoading(false);
           return;
         }
-
         signInAction(formData);
       } else {
         const data = {
@@ -41,7 +40,6 @@ const AuthForm = ({ component }: { component: string }) => {
           setLoading(false);
           return;
         }
-
         signUpAction(formData);
       }
     } catch (error) {
