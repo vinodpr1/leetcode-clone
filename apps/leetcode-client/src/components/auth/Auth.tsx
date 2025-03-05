@@ -1,6 +1,5 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import React from "react";
 import "../../app/globals.css";
 import AuthForm from "./AuthForm";
 
@@ -19,7 +18,6 @@ const Auth = ({
   userAuthOption,
   userAuthAction,
 }: IAuth) => {
-  // const [response, setResponse] = useFormState(signInAction,{ success: true, message: ""});
 
   return (
     <div className="h-[100vh] w-[100vw] overflow-x-hidden">

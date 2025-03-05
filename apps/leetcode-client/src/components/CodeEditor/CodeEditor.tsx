@@ -1,9 +1,7 @@
 "use client";
-import React, { useEffect } from "react";
 import Editor from "@monaco-editor/react";
 import { activeOutputModal } from "@/store/toggle";
 import { useRecoilState } from "recoil";
-import { CodeXml } from "lucide-react";
 import EditorNav from "./EditorNav";
 
 const CodeEditor = ({

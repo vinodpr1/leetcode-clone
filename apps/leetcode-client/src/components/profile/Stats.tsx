@@ -1,5 +1,3 @@
-import React from "react";
-
 const Stats = (profileData: any) => {
   return (
     <div className="bg-gray-800 rounded-lg p-6 grid grid-cols-1 md:grid-cols-2 gap-6">

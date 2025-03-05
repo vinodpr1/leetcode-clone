@@ -1,5 +1,5 @@
 import { ChevronDown, CodeXml, Play } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import LanguageDropdown from "../dropdowns/LanguageDropdown";
 import ThemeDropdown from "../dropdowns/ThemeDropdown";
 import {
@@ -57,7 +57,7 @@ const EditorNav = ({
   const handleCodeSubmit = async () => {
     setIsOutputModal(true);
     const response = await axios.post(
-      "http://localhost:3100/api/v1/submission/submit",
+      `${process.env.DATABASE_URL}/submission/submit`,
       { code: code, languageId: language.id },
     );
     console.log("respoo #34567", response.data.res);

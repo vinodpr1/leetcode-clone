@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
         hostname: 'cdn.pixabay.com'
       }
     ]
-  },
+  }
 };
 
 export default nextConfig;

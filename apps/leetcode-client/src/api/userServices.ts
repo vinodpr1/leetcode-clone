@@ -1,5 +1,5 @@
 export async function fetchUser(authToken: any) {
-    const response = await fetch("http://localhost:3100/api/v1/user/profile", {
+    const response = await fetch(`${process.env.DATABASE_URL}/user/profile`, {
         method: "GET",
         headers: {
           Cookie: `authToken=${authToken}`, // Sending auth token manually

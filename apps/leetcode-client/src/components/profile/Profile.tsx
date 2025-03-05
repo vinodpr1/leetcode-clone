@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { MapPin, Building, Globe } from "lucide-react";
 import Stats from "./Stats";
 import Consistency from "./Consistency";

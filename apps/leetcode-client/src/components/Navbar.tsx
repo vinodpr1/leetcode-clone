@@ -2,7 +2,6 @@ import { Github, LogOut, UserCheck } from "lucide-react";
 import Link from "next/link";
 import { cookies } from "next/headers";
 import NavResizer from "./NavResizer";
-import { useEffect, useState } from "react";
 import { fetchUser } from "@/api/userServices";
 
 const Navbar = async() => {

@@ -1,10 +1,9 @@
 import axios from "axios";
 import { CircleCheckBig, FileCode } from "lucide-react";
 import Link from "next/link";
-import React from "react";
 
 const Questions = async () => {
-  const response = await axios.get("http://localhost:3100/api/v1/questions");
+  const response = await axios.get(`${process.env.DATABASE_URL}/questions`);
   const data = response.data.res.questions;
 
   return (

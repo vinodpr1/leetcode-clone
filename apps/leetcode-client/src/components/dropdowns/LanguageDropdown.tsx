@@ -1,4 +1,3 @@
-import React from "react";
 import { LANGUAGES } from "@/constants/language";
 import "../../app/globals.css";
 import { Check } from "lucide-react";

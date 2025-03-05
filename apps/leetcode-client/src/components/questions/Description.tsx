@@ -1,5 +1,4 @@
 import { CircleCheckBig } from "lucide-react";
-import React from "react";
 
 const Description = () => {
   return (

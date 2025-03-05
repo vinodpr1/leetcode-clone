@@ -2,10 +2,11 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
+
 export async function signInAction(formData: FormData) {
   const email = formData.get("email") as string;
   const password = formData.get("password") as string;
-  const response = await fetch("http://localhost:3100/api/v1/user/signin", {
+  const response = await fetch(`${process.env.DATABASE_URL}/user/signin`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -15,7 +16,6 @@ export async function signInAction(formData: FormData) {
 
   // console.log("AAli re aali", response);
   const data = await response.json();
-  console.log("AAli re aali", data);
 
   (await cookies()).set("authToken", data.data.token, {
     httpOnly: true,
@@ -23,7 +23,7 @@ export async function signInAction(formData: FormData) {
     maxAge: 60 * 60,
     path: "/",
   });
-  redirect("/ide");
+  redirect("/questions");
 }
 
 export async function signUpAction(formData: FormData) {
@@ -31,7 +31,7 @@ export async function signUpAction(formData: FormData) {
   const email = formData.get("email") as string;
   const password = formData.get("password") as string;
 
-  const response = await fetch("http://localhost:3100/api/v1/user/signup", {
+  const response = await fetch(`${process.env.DATABASE_URL}/user/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -47,5 +47,5 @@ export async function signUpAction(formData: FormData) {
     maxAge: 60 * 60,
     path: "/",
   });
-  redirect("/ide");
+  redirect("/questions");
 }

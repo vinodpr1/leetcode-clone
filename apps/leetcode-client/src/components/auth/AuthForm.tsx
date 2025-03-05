@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
-import axios from "axios";
 import { signInAction, signUpAction } from "./authActions";
 import { userSchema, authSchema } from "@repo/common/types";
 import { ToastContainer, toast } from "react-toastify";
