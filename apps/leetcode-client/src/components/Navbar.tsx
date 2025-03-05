@@ -3,22 +3,15 @@ import Link from "next/link";
 import { cookies } from "next/headers";
 import NavResizer from "./NavResizer";
 import { useEffect, useState } from "react";
+import { fetchUser } from "@/api/userServices";
 
 const Navbar = async() => {
 
   const cookieStore = await cookies();
   const authToken = cookieStore.get('authToken')?.value;
-  console.log("AUth token is", authToken);
 
-  const response = await fetch("http://localhost:3100/api/v1/user/profile", {
-    method: "GET",
-    headers: {
-      Cookie: `authToken=${authToken}`, // Sending auth token manually
-    },
-    credentials: "include",
-  });
-  const data = await response.json();
-  console.log("Userrr #3", data?.data?.user);
+  const data =await fetchUser(authToken);
+  const user = data?.data?.user;
 
 
   return (
@@ -44,16 +37,21 @@ const Navbar = async() => {
         </div>
         <div className="flex items-center gap-x-6">
           {
-            authToken?
+            user?
             <div className="flex items-center gap-4">
-              <button className="flex items-center justify-center bg-global_bg p-2 hover:bg-hover_global rounded-full transition-all duration-300">
-                <LogOut className="h-4 w-4"/>
-              </button>
+              <form action="/api/logout" method="POST">
+               <button
+                  type="submit"
+                  className="flex items-center justify-center bg-global_bg p-2 hover:bg-hover_global rounded-full transition-all duration-300"
+                >
+                  <LogOut className="h-4 w-4" />
+                </button>
+              </form>
               <Link href={"/profile"}>
                 <button  className="flex items-center justify-center bg-global_bg p-2 hover:bg-hover_global rounded-full transition-all duration-300">
                   <UserCheck className="h-4 w-4"/>
                 </button>
-              </Link>
+             </Link>
             </div>
             :
             <div className="hidden md:flex items-center gap-x-6 ">
