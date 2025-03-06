@@ -14,7 +14,8 @@ const Navbar = async() => {
 
 
   return (
-    <nav className="flex items-center mx-auto max-w-6xl w-full">
+   <div className="fixed top-0 z-50 backdrop-blur-xl w-full border-b">
+      <nav className="flex items-center mx-auto max-w-6xl w-full">
       <div className="flex w-full  py-2 justify-between">
         <div className="flex items-center gap-x-[90px]">
           <div className="text-xl font-bold bg-gradient-to-tr from-[#2affec] to-green-700 bg-clip-text text-transparent">
@@ -74,7 +75,8 @@ const Navbar = async() => {
           <NavResizer/>
         </div>
       </div>
-    </nav>
+      </nav>
+    </div>
   );
 };
 

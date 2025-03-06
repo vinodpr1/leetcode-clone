@@ -12,9 +12,10 @@ const Questions = async () => {
   return (
     <div className="mx-auto w-full">
       <div className=" w-full flex justify-between">
-        <div className="grid grid-cols-4 w-full text-gray-200 uppercase text-sm leading-normal border-b border-gray-700">
+        <div className="grid grid-cols-6 w-full text-gray-200 uppercase text-sm leading-normal border-b border-gray-700">
+          <span className="py-3 px-6 text-left font-semibold">Sr.</span>
           <span className="py-3 px-6 text-left font-semibold">Status</span>
-          <span className="py-3 px-6 text-left font-semibold">Description</span>
+          <span className="py-3 px-6 col-span-2 text-left font-semibold">Description</span>
           <span className="py-3 px-6 text-left font-semibold">Solution</span>
           <span className="py-3 px-6 text-left font-semibold">Difficulty</span>
         </div>
@@ -23,11 +24,14 @@ const Questions = async () => {
         {questions.map((question: any, index: number) => {
           return (
             <Link key={index} href={`/problems/${question?.id}?title=${question?.title}`}>
-              <div className="grid grid-cols-4 hover:bg-hover_global transition-all duration-300">
+              <div className="grid grid-cols-6 hover:bg-hover_global transition-all duration-300">
+               <span className="py-3 px-6">
+                  <span>{question?.id}</span>
+                </span>
                 <span className="py-3 px-6">
                   <CircleCheckBig className="h-4 w-4 text-green-500" />
                 </span>
-                <span className="py-3 px-6">
+                <span className="py-3 px-6 col-span-2">
                   <span>{question?.title}</span>
                 </span>
                 <span className="py-3 px-6">

@@ -20,7 +20,7 @@ export async function signInAction(formData: FormData) {
   (await cookies()).set("authToken", data.data.token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
-    maxAge: 60 * 60,
+    maxAge: 60 * 60 * 60,
     path: "/",
   });
   redirect("/questions");

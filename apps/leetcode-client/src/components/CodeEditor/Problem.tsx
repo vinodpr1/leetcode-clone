@@ -50,7 +50,6 @@ const Problem = ({questionID}:{questionID:any}) => {
   const getQuestionDetails=async ()=>{
      const response = await fetch(`http://localhost:3100/api/v1/questions?id=${questionID}`);
      const question = await response.json();
-     console.log(question.res[0]);
      setQues(question.res[0]);
   }
 

@@ -7,9 +7,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="max-w-6xl mx-auto">
+    <div>
       <Navbar />
-      <div className="mt-20">{children}</div>
+      <div className="mt-20 max-w-6xl mx-auto">{children}</div>
     </div>
   );
 }
