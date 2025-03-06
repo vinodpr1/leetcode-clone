@@ -1,8 +1,9 @@
 import express from "express";
-import { getQuestions } from "../../../controllers";
+import { getQuestion, getQuestions } from "../../../controllers";
 
 const questionRoutes: any = express.Router();
 
-questionRoutes.get("/", getQuestions);
+questionRoutes.get("/", getQuestion);
+questionRoutes.get("/bulk", getQuestions);
 
 export { questionRoutes };

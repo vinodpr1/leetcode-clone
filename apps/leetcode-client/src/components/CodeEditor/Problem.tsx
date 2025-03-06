@@ -12,7 +12,7 @@ import {
   submissionResponse,
 } from "@/store/toggle";
 
-const Problem = () => {
+const Problem = ({questionID}:{questionID:any}) => {
   const [language, setLanguage] = useState({
     label: "JavaScript",
     value: "javascript",
@@ -21,6 +21,7 @@ const Problem = () => {
   });
   const [theme, setTheme] = useState("vs-dark");
   const [code, setCode] = useState(getBoilerCode(language.id));
+  const [ques, setQues] = useState(null);
 
   const [submissionRes, setSubmissionRes] = useRecoilState(submissionResponse);
 
@@ -42,11 +43,22 @@ const Problem = () => {
     console.log("AAAA gayaaa", submissionRes);
   }, [submissionRes]);
 
+  useEffect(()=>{
+      getQuestionDetails();
+  },[])
+
+  const getQuestionDetails=async ()=>{
+     const response = await fetch(`http://localhost:3100/api/v1/questions?id=${questionID}`);
+     const question = await response.json();
+     console.log(question.res[0]);
+     setQues(question.res[0]);
+  }
+
   return (
     <div onClick={handlePropagation} className="h-screen p-2 overflow-hidden">
       <div className="flex flex-col md:flex  md:flex-row gap-2 w-full h-full rounded">
         <div className="border border-gray-500 md:w-[40%] rounded w-full  h-full">
-          <Description />
+          <Description ques={ques}/>
         </div>
 
         <div className="w-full md:w-[60%] flex flex-col gap-2 rounded  h-full">

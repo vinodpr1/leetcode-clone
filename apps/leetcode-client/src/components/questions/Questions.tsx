@@ -4,9 +4,10 @@ import Link from "next/link";
 
 const Questions = async () => {
 
-  const response = await fetch(`${process.env.DATABASE_URL}/questions`);
+  const response = await fetch(`${process.env.DATABASE_URL}/questions/bulk`);
   const json = await response.json();
   const questions = json.res.questions;
+  console.log("QUEST", questions);
 
   return (
     <div className="mx-auto w-full">
@@ -19,21 +20,21 @@ const Questions = async () => {
         </div>
       </div>
       <div className="text-gray-400 text-sm">
-        {questions.map((data: any, index: number) => {
+        {questions.map((question: any, index: number) => {
           return (
-            <Link key={index} href={"/problems/2333"}>
+            <Link key={index} href={`/problems/${question?.id}?title=${question?.title}`}>
               <div className="grid grid-cols-4 hover:bg-hover_global transition-all duration-300">
                 <span className="py-3 px-6">
                   <CircleCheckBig className="h-4 w-4 text-green-500" />
                 </span>
                 <span className="py-3 px-6">
-                  <span>Merge Two 2D Arrays by Summing</span>
+                  <span>{question?.title}</span>
                 </span>
                 <span className="py-3 px-6">
                   <FileCode className="h-4 w-4 text-green-500" />
                 </span>
                 <span className="py-3 px-6">
-                  <span>Easy</span>
+                  <span>{question?.difficulty}</span>
                 </span>
               </div>
             </Link>

@@ -1,6 +1,10 @@
+import axios from "axios";
 import { CircleCheckBig } from "lucide-react";
 
-const Description = () => {
+const Description = ({ques}:{ques:any}) => {
+
+  console.log("Que sin description", ques)
+
   return (
     <div className="h-full">
       <div className="rounded h-full text-sm">
@@ -10,21 +14,17 @@ const Description = () => {
 
         <div className="px-4 lang overflow-auto bg-[#212020] h-[94%] ">
           <div className="py-4 flex justify-between">
-            <h3 className="text-xl font-bold">1- Title of Question</h3>
+            <h3 className="text-xl font-bold">{ques?.id} - {ques?.title}</h3>
             <div className="flex items-center gap-1">
               <span className="text-gray-400 text-sm">Solved</span>
               <CircleCheckBig className="h-4 w-4 text-green-500" />
             </div>
           </div>
-          <button className="px-2 flex justify-center items-center bg-[rgb(49,48,48)] rounded-full">
-            <span className="text-green-400 text-sm font-thin">Tag Name</span>
-          </button>
-          <p className="text-sm text-gray-100">
-            consectetur reprehenderit nisi tempore id? Eos iusto a ducimus
-            commodi dolores. In, repellendus odio nulla minima magni architecto
-            repellat incidunt voluptate id numquam iste eligendi eaque adipisci
-            placeat asperiores necessitatibus consectetur reiciendis explicabo
-            hic voluptatum nisi, corrupti modi. Similique, exercitationem quasi?
+          <div className="px-2 w-fit flex  items-center bg-[rgb(81,79,79)] rounded-full">
+            <div className="flex items-center text-green-400 text-sm font-thin">{ques?.difficulty}</div>
+          </div>
+          <p className="text-sm text-gray-100 pt-4">
+            {ques?.description}
           </p>
         </div>
       </div>

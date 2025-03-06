@@ -4,7 +4,7 @@ export const questions = {
       id: 1,
       title: "Two Sum",
       description:
-        "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.",
+      "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.",
       difficulty: "Easy",
       examples: [
         {
