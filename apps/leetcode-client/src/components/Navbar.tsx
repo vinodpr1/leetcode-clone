@@ -7,7 +7,7 @@ import { fetchUser } from "@/api/userServices";
 const Navbar = async() => {
 
   const cookieStore = await cookies();
-  const authToken = cookieStore.get('authToken')?.value;
+  const authToken = cookieStore.get('authToken')?.value as string;
 
   const data =await fetchUser(authToken);
   const user = data?.data?.user;
