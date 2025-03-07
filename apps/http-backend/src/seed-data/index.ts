@@ -4,7 +4,7 @@ export const questions = {
       id: 1,
       title: "Two Sum",
       description:
-      "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.",
+        "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.",
       difficulty: "Easy",
       examples: [
         {
@@ -76,7 +76,10 @@ export const questions = {
         { input: { s: "bbbbb" }, output: 1 },
         { input: { s: "pwwkew" }, output: 3 },
       ],
-      constraints: ["0 <= s.length <= 5 * 10^4", "s consists of English letters, digits, symbols, and spaces."],
+      constraints: [
+        "0 <= s.length <= 5 * 10^4",
+        "s consists of English letters, digits, symbols, and spaces.",
+      ],
     },
     {
       id: 6,
@@ -109,7 +112,13 @@ export const questions = {
         "Given an array nums of n integers, find all unique triplets in the array which gives the sum of zero.",
       difficulty: "Medium",
       examples: [
-        { input: { nums: [-1, 0, 1, 2, -1, -4] }, output: [[-1, -1, 2], [-1, 0, 1]] },
+        {
+          input: { nums: [-1, 0, 1, 2, -1, -4] },
+          output: [
+            [-1, -1, 2],
+            [-1, 0, 1],
+          ],
+        },
         { input: { nums: [] }, output: [] },
         { input: { nums: [0] }, output: [] },
       ],
@@ -126,7 +135,11 @@ export const questions = {
         { input: { head: [1], n: 1 }, output: [] },
         { input: { head: [1, 2], n: 1 }, output: [1] },
       ],
-      constraints: ["1 <= list size <= 30", "0 <= Node.val <= 100", "1 <= n <= list size"],
+      constraints: [
+        "1 <= list size <= 30",
+        "0 <= Node.val <= 100",
+        "1 <= n <= list size",
+      ],
     },
     {
       id: 10,
@@ -139,7 +152,10 @@ export const questions = {
         { input: { s: "()[]{}" }, output: true },
         { input: { s: "(]" }, output: false },
       ],
-      constraints: ["1 <= s.length <= 10^4", "s consists of parentheses only '()[]{}'."],
+      constraints: [
+        "1 <= s.length <= 10^4",
+        "s consists of parentheses only '()[]{}'.",
+      ],
     },
     {
       id: 11,
@@ -187,10 +203,7 @@ export const questions = {
         { input: { nums: [1] }, output: 1 },
         { input: { nums: [5, 4, -1, 7, 8] }, output: 23 },
       ],
-      constraints: [
-        "1 <= nums.length <= 3 * 10^4",
-        "-10^5 <= nums[i] <= 10^5",
-      ],
+      constraints: ["1 <= nums.length <= 3 * 10^4", "-10^5 <= nums[i] <= 10^5"],
     },
     {
       id: 14,
@@ -215,10 +228,7 @@ export const questions = {
         { input: { prices: [7, 1, 5, 3, 6, 4] }, output: 5 },
         { input: { prices: [7, 6, 4, 3, 1] }, output: 0 },
       ],
-      constraints: [
-        "1 <= prices.length <= 10^5",
-        "0 <= prices[i] <= 10^4",
-      ],
+      constraints: ["1 <= prices.length <= 10^5", "0 <= prices[i] <= 10^4"],
     },
     {
       id: 16,
@@ -230,7 +240,10 @@ export const questions = {
         { input: { s: "A man, a plan, a canal: Panama" }, output: true },
         { input: { s: "race a car" }, output: false },
       ],
-      constraints: ["1 <= s.length <= 2 * 10^5", "s consists only of printable ASCII characters."],
+      constraints: [
+        "1 <= s.length <= 2 * 10^5",
+        "s consists only of printable ASCII characters.",
+      ],
     },
     {
       id: 17,
@@ -298,8 +311,7 @@ export const questions = {
     {
       id: 21,
       title: "Maximum Depth of Binary Tree",
-      description:
-        "Given the root of a binary tree, return its maximum depth.",
+      description: "Given the root of a binary tree, return its maximum depth.",
       difficulty: "Easy",
       examples: [
         { input: { root: [3, 9, 20, null, null, 15, 7] }, output: 3 },
@@ -317,7 +329,13 @@ export const questions = {
         "Given the root of a binary tree and an integer targetSum, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals targetSum.",
       difficulty: "Easy",
       examples: [
-        { input: { root: [5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1], targetSum: 22 }, output: true },
+        {
+          input: {
+            root: [5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1],
+            targetSum: 22,
+          },
+          output: true,
+        },
         { input: { root: [1, 2, 3], targetSum: 5 }, output: false },
       ],
       constraints: [
@@ -333,7 +351,10 @@ export const questions = {
         "Given an integer numRows, return the first numRows of Pascal's triangle.",
       difficulty: "Easy",
       examples: [
-        { input: { numRows: 5 }, output: [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]] },
+        {
+          input: { numRows: 5 },
+          output: [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]],
+        },
         { input: { numRows: 1 }, output: [[1]] },
       ],
       constraints: ["1 <= numRows <= 30"],
@@ -380,10 +401,7 @@ export const questions = {
         { input: { nums: [0, 1, 0, 3, 12] }, output: [1, 3, 12, 0, 0] },
         { input: { nums: [0] }, output: [0] },
       ],
-      constraints: [
-        "1 <= nums.length <= 10^4",
-        "-2^31 <= nums[i] <= 2^31 - 1",
-      ],
+      constraints: ["1 <= nums.length <= 10^4", "-2^31 <= nums[i] <= 2^31 - 1"],
     },
     {
       id: 27,
@@ -427,7 +445,10 @@ export const questions = {
         { input: { s: "leetcode" }, output: 0 },
         { input: { s: "loveleetcode" }, output: 2 },
       ],
-      constraints: ["1 <= s.length <= 10^5", "s consists of only lowercase English letters."],
+      constraints: [
+        "1 <= s.length <= 10^5",
+        "s consists of only lowercase English letters.",
+      ],
     },
     {
       id: 30,
@@ -451,10 +472,19 @@ export const questions = {
         "Write a function that reverses a string. The input string is given as an array of characters s.",
       difficulty: "Easy",
       examples: [
-        { input: { s: ["h", "e", "l", "l", "o"] }, output: ["o", "l", "l", "e", "h"] },
-        { input: { s: ["H", "a", "n", "n", "a", "h"] }, output: ["h", "a", "n", "n", "a", "H"] },
+        {
+          input: { s: ["h", "e", "l", "l", "o"] },
+          output: ["o", "l", "l", "e", "h"],
+        },
+        {
+          input: { s: ["H", "a", "n", "n", "a", "h"] },
+          output: ["h", "a", "n", "n", "a", "H"],
+        },
       ],
-      constraints: ["1 <= s.length <= 10^5", "s[i] is a printable ASCII character."],
+      constraints: [
+        "1 <= s.length <= 10^5",
+        "s[i] is a printable ASCII character.",
+      ],
     },
     {
       id: 32,
@@ -498,10 +528,7 @@ export const questions = {
         { input: { nums: [1, 2, 3, 1] }, output: true },
         { input: { nums: [1, 2, 3, 4] }, output: false },
       ],
-      constraints: [
-        "1 <= nums.length <= 10^5",
-        "-10^9 <= nums[i] <= 10^9",
-      ],
+      constraints: ["1 <= nums.length <= 10^5", "-10^9 <= nums[i] <= 10^9"],
     },
     {
       id: 35,
@@ -542,8 +569,7 @@ export const questions = {
     {
       id: 38,
       title: "Reverse Bits",
-      description:
-        "Reverse bits of a given 32 bits unsigned integer.",
+      description: "Reverse bits of a given 32 bits unsigned integer.",
       difficulty: "Easy",
       examples: [
         { input: { n: 43261596 }, output: 964176192 },
@@ -578,12 +604,6 @@ export const questions = {
         "1 <= s.length <= 10^4",
         "s consists of parentheses only '()[]{}'.",
       ],
-    }
+    },
   ],
 };
-
-
-
-
-
-

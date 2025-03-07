@@ -1,7 +1,11 @@
-import Landing from '@/components/Landing'
+import Landing from "@/components/Landing";
 
 const page = () => {
-  return <Landing />
-}
+  return (
+    <main>
+      <Landing />
+    </main>
+  );
+};
 
-export default page
+export default page;

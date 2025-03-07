@@ -12,25 +12,31 @@ import { useRecoilState } from "recoil";
 
 import axios from "axios";
 
+import { authToken } from "@/store/toggle";
+import { redirect } from "next/navigation";
+
 const EditorNav = ({
   language,
   setLanguage,
   theme,
   setTheme,
   code,
+  authTOken,
 }: {
   language: any;
   setLanguage: any;
   theme: any;
   setTheme: any;
   code: any;
+  authTOken: any;
 }) => {
   const [chooseLanguage, setChooseLanguage] =
     useRecoilState(chooseLanguageToggle);
   const [chooseTheme, setChooseTheme] = useRecoilState(chooseThemeToggle);
-  const [token, setToken] = useState(null);
   const [isOutputModal, setIsOutputModal] = useRecoilState(activeOutputModal);
   const [submissionRes, setSubmissionRes] = useRecoilState(submissionResponse);
+
+  const [token, setToken] = useRecoilState(authToken);
 
   useEffect(() => {
     setChooseLanguage(false);
@@ -55,9 +61,14 @@ const EditorNav = ({
   };
 
   const handleCodeSubmit = async () => {
+    if (!authTOken) {
+      redirect("/signin");
+      return;
+    }
     setIsOutputModal(true);
+    setSubmissionRes("");
     const response = await axios.post(
-      `${process.env.DATABASE_URL}/submission/submit`,
+      "http://localhost:3100/api/v1/submission/submit",
       { code: code, languageId: language.id },
     );
     console.log("respoo #34567", response.data.res);

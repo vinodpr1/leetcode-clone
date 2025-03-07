@@ -19,3 +19,8 @@ export const submissionResponse = atom<string>({
   key: "activeOutputModal2",
   default: "",
 });
+
+export const authToken = atom<any>({
+  key: "authTOken",
+  default: "",
+});

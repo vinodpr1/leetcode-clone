@@ -18,7 +18,6 @@ const Auth = ({
   userAuthOption,
   userAuthAction,
 }: IAuth) => {
-
   return (
     <div className="h-[100vh] w-[100vw] overflow-x-hidden">
       <div className="h-full w-full flex flex-col lg:grid lg:grid-cols-10">

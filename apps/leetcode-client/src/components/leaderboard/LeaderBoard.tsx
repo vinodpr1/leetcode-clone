@@ -2,7 +2,6 @@ import Link from "next/link";
 import React from "react";
 
 const LeaderBoard = async () => {
- 
   const response = await fetch(`${process.env.DATABASE_URL}/user/bulk`);
   const json = await response.json();
   const users = json.data.user;
@@ -30,7 +29,9 @@ const LeaderBoard = async () => {
                   <span className="text-left font-semibold">{user.email}</span>
                 </div>
                 <div className="flex py-2 items-center">
-                  <span className="text-left font-semibold">{user.no_of_solved_questions}</span>
+                  <span className="text-left font-semibold">
+                    {user.no_of_solved_questions}
+                  </span>
                 </div>
               </div>
             </Link>

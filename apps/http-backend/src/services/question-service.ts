@@ -12,18 +12,17 @@ class QuestionServices {
     }
   }
 
-
-  async getQuestion(questionId:any) {
+  async getQuestion(questionId: any) {
     try {
-      const question = questions.questions.filter((question)=>question.id==questionId);
+      const question = questions.questions.filter(
+        (question) => question.id == questionId,
+      );
       return question;
     } catch (error) {
       console.error("Error occurred while fetching questions", error);
       throw error;
     }
   }
-
-
 }
 
 export { QuestionServices };

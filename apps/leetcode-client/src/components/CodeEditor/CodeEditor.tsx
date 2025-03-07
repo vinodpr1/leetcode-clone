@@ -12,6 +12,7 @@ const CodeEditor = ({
   setLanguage,
   code,
   setCode,
+  authTOken,
 }: {
   openIde?: boolean;
   theme: any;
@@ -20,6 +21,7 @@ const CodeEditor = ({
   language: any;
   code: any;
   setCode: any;
+  authTOken?: string;
 }) => {
   function handleEditorChange(value: any, event: any) {
     setCode(value);
@@ -53,6 +55,7 @@ const CodeEditor = ({
           theme={theme}
           setTheme={setTheme}
           code={code}
+          authTOken={authTOken}
         />
       </div>
       <Editor

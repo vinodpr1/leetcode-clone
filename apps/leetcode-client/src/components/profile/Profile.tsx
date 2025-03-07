@@ -11,6 +11,7 @@ interface IProfileData {
   email: string;
   userId: number;
   location: string;
+
   name: string;
   no_of_solved_questions: number;
   rank: number;
@@ -74,19 +75,27 @@ function Profile() {
     <div className="min-h-screen bg-gray-900 text-white p-4 md:p-8">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="bg-gray-800 rounded-lg p-6">
-            <div className="flex items-center gap-x-8 mb-4">
-              <div className="w-12">
-                <Image className="rounded" height={48} width={48} src={"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"} alt="profile-pi"/>
-               </div>
-          
-             <div className="">
-               <h1 className="text-xl font-mmedium flex items-center gap-2">
-                  {profileData.name} <span className="text-amber-500">🏆</span>
-                </h1>
-                <p className="mt-1 text-sm">
-                  Rank <span className="font-medium">194,865</span>
-                </p>
-              </div>
+          <div className="flex items-center gap-x-8 mb-4">
+            <div className="w-12">
+              <Image
+                className="rounded"
+                height={48}
+                width={48}
+                src={
+                  "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                }
+                alt="profile-pi"
+              />
+            </div>
+
+            <div className="">
+              <h1 className="text-xl font-mmedium flex items-center gap-2">
+                {profileData.name} <span className="text-amber-500">🏆</span>
+              </h1>
+              <p className="mt-1 text-sm">
+                Rank <span className="font-medium">194,865</span>
+              </p>
+            </div>
           </div>
 
           <button

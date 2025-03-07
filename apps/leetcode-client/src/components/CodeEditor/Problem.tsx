@@ -12,7 +12,13 @@ import {
   submissionResponse,
 } from "@/store/toggle";
 
-const Problem = ({questionID}:{questionID:any}) => {
+const Problem = ({
+  questionID,
+  authTOken,
+}: {
+  questionID: any;
+  authTOken: any;
+}) => {
   const [language, setLanguage] = useState({
     label: "JavaScript",
     value: "javascript",
@@ -43,21 +49,23 @@ const Problem = ({questionID}:{questionID:any}) => {
     console.log("AAAA gayaaa", submissionRes);
   }, [submissionRes]);
 
-  useEffect(()=>{
-      getQuestionDetails();
-  },[])
+  useEffect(() => {
+    getQuestionDetails();
+  }, []);
 
-  const getQuestionDetails=async ()=>{
-     const response = await fetch(`http://localhost:3100/api/v1/questions?id=${questionID}`);
-     const question = await response.json();
-     setQues(question.res[0]);
-  }
+  const getQuestionDetails = async () => {
+    const response = await fetch(
+      `http://localhost:3100/api/v1/questions?id=${questionID}`,
+    );
+    const question = await response.json();
+    setQues(question.res[0]);
+  };
 
   return (
     <div onClick={handlePropagation} className="h-screen p-2 overflow-hidden">
       <div className="flex flex-col md:flex  md:flex-row gap-2 w-full h-full rounded">
         <div className="border border-gray-500 md:w-[40%] rounded w-full  h-full">
-          <Description ques={ques}/>
+          <Description ques={ques} />
         </div>
 
         <div className="w-full md:w-[60%] flex flex-col gap-2 rounded  h-full">
@@ -71,6 +79,7 @@ const Problem = ({questionID}:{questionID:any}) => {
               setLanguage={setLanguage}
               code={code}
               setCode={setCode}
+              authTOken={authTOken}
             />
           </div>
           {isOutputModal && (

@@ -185,7 +185,7 @@ body {
 .leetcode-button {
   background-color: var(--leetcode-green);
   color: var(--leetcode-dark);
-  font-weight: 600;
+  font-weight: 500;
   padding: 0.75rem 2rem;
   border-radius: 9999px;
   transition: all 0.3s ease;

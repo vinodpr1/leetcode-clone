@@ -16,7 +16,6 @@ export const getQuestions = async (req: any, res: any) => {
   }
 };
 
-
 export const getQuestion = async (req: any, res: any) => {
   try {
     const questionId = req.query.id;

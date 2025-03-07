@@ -6,10 +6,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <div>
-      <Navbar />
-      <div className="mt-20 max-w-6xl mx-auto">{children}</div>
-    </div>
-  );
+  return <div className="max-w-6xl mx-auto">{children}</div>;
 }

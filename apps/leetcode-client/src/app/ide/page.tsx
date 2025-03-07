@@ -1,7 +1,7 @@
-import OpenIDE from '@/components/CodeEditor/OpenIDE'
+import OpenIDE from "@/components/CodeEditor/OpenIDE";
 
 const page = () => {
-  return <OpenIDE/>
-}
+  return <OpenIDE />;
+};
 
-export default page
+export default page;

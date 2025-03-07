@@ -4,15 +4,15 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: false,
   images: {
-    remotePatterns:[
+    remotePatterns: [
       {
-        hostname: 'avatars.githubusercontent.com'
+        hostname: "avatars.githubusercontent.com",
       },
       {
-        hostname: 'cdn.pixabay.com'
-      }
-    ]
-  }
+        hostname: "cdn.pixabay.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
