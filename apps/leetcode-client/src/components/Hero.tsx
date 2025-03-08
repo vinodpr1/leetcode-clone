@@ -6,15 +6,15 @@ import "../app/globals.css";
 const Hero = () => {
   return (
     <section className="py-8 md:py-12 px-6 md:px-4">
+       
       <div className="w-full flex gap-8 flex-col md:flex-row">
         <div className="flex-1 mx-auto hero-bg flex-grow flex items-center justify-center relative">
-          <div className="absolute inset-0 dot-pattern z-10"></div>
+          <div className="absolute inset-0 dot-pattern"></div>
+          <div className="glow top-1/4 left-1/4"></div>
+          <div className="glow bottom-1/4 right-1/3"></div>
+          <div className="glow top-1/3 right-1/4"></div>
 
-          <div className="glow top-1/4 left-1/4 z-0"></div>
-          <div className="glow bottom-1/4 right-1/3 z-0"></div>
-          <div className="glow top-1/3 right-1/4 z-0"></div>
-
-          <div className="container mx-auto px-6 relative z-20 text-center py-20">
+          <div className="container mx-auto px-6 relative text-center py-20">
             <h1 className="text-xl md:text-3xl font-semibold text-white mb-6 leading-tight">
               Level up with <span className="text-[#25f5ae]">CodeX</span>
             </h1>

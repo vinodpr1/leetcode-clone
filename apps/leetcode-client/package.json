@@ -10,6 +10,7 @@
     "lint": "next lint --max-warnings 0"
   },
   "dependencies": {
+    "@repo/db":"workspace:*",
     "@ant-design/icons": "^5.6.1",
     "@codingame/monaco-vscode-theme-defaults-default-extension": "^14.0.5",
     "@monaco-editor/react": "^4.7.0",

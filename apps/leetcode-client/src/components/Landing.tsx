@@ -1,8 +1,4 @@
 import "../app/globals.css";
-import Link from "next/link";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { cookies } from "next/headers";
 import Hero from "./Hero";
 import Events from "./Events";
 import Questions from "./Questions";

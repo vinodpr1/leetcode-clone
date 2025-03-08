@@ -96,6 +96,9 @@ importers:
       '@repo/common':
         specifier: workspace:*
         version: link:../../packages/common
+      '@repo/db':
+        specifier: workspace:*
+        version: link:../../packages/db
       antd:
         specifier: ^5.24.2
         version: 5.24.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)

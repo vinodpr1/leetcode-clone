@@ -12,7 +12,7 @@ const Navbar = async () => {
   const user = data?.data?.user;
 
   return (
-    <div className="fixed top-0 z-50 h-12 backdrop-blur-xl w-full px-6 border-b border-gray-800">
+    <div className="fixed top-0 z-10 h-12 backdrop-blur-xl w-full px-6 border-b border-gray-800">
       <nav className="flex items-center mx-auto max-w-6xl w-full">
         <div className="flex w-full  py-2 justify-between">
           <div className="flex items-center gap-x-[90px]">
